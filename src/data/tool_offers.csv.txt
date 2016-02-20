@@ -1,0 +1,157 @@
+Name,Tool,Amount,NormalPrice,DiscountPrice,DiscountPercent,LevelEnabled,LevelDisabled,DurationMinutes,Spender,Enabled
+String,String,int,int,int,int,int,int,int,Boolean,Boolean
+Saw_Spender_1,Saw,12,60,30,50,7,10,1200,true,true
+Saw_Spender_2,Saw,16,80,32,60,7,10,1200,true,true
+Saw_Spender_3,Saw,16,80,40,50,10,20,1200,true,true
+Saw_Spender_4,Saw,20,100,40,60,10,20,1200,true,true
+Saw_Spender_5,Saw,16,80,24,70,20,30,1200,true,true
+Saw_Spender_6,Saw,12,60,24,60,20,30,1200,true,true
+Saw_Spender_7,Saw,20,100,40,60,30,40,1200,true,true
+Saw_Spender_8,Saw,20,100,30,70,30,40,1200,true,true
+Saw_Spender_9,Saw,20,100,40,60,40,50,1200,true,true
+Saw_Spender_10,Saw,16,80,32,60,40,50,1200,true,true
+Saw_Spender_11,Saw,20,100,40,60,50,,1200,true,true
+Saw_Spender_12,Saw,16,80,32,60,50,,1200,true,true
+,,,,,,,,,,
+Axe_Spender_1,Axe,20,80,32,60,7,10,1200,true,true
+Axe_Spender_2,Axe,10,40,20,50,7,10,1200,true,true
+Axe_Spender_3,Axe,20,80,32,60,10,20,1200,true,true
+Axe_Spender_4,Axe,15,60,30,50,10,20,1200,true,true
+Axe_Spender_5,Axe,20,80,32,60,20,30,1200,true,true
+Axe_Spender_6,Axe,15,60,24,60,20,30,1200,true,true
+Axe_Spender_7,Axe,20,80,24,70,30,40,1200,true,true
+Axe_Spender_8,Axe,15,60,24,60,30,40,1200,true,true
+Axe_Spender_9,Axe,20,80,32,60,40,50,1200,true,true
+Axe_Spender_10,Axe,15,60,24,60,40,50,1200,true,true
+Axe_Spender_11,Axe,20,80,32,60,50,,1200,true,true
+Axe_Spender_12,Axe,15,60,24,60,50,,1200,true,true
+,,,,,,,,,,
+Dynamite_Spender_1,Dynamite,20,60,18,70,7,10,1200,true,true
+Dynamite_Spender_2,Dynamite,16,48,19,60,7,10,1200,true,true
+Dynamite_Spender_3,Dynamite,16,48,19,60,10,20,1200,true,true
+Dynamite_Spender_4,Dynamite,20,60,18,70,10,20,1200,true,true
+Dynamite_Spender_5,Dynamite,20,60,18,70,20,30,1200,true,true
+Dynamite_Spender_6,Dynamite,16,48,24,50,20,30,1200,true,true
+Dynamite_Spender_7,Dynamite,16,48,19,60,30,40,1200,true,true
+Dynamite_Spender_8,Dynamite,20,60,18,70,30,40,1200,true,true
+Dynamite_Spender_9,Dynamite,20,60,18,70,40,50,1200,true,true
+Dynamite_Spender_10,Dynamite,16,48,19,60,40,50,1200,true,true
+Dynamite_Spender_11,Dynamite,20,60,24,60,50,,1200,true,true
+Dynamite_Spender_12,Dynamite,16,48,19,60,50,,1200,true,true
+,,,,,,,,,,
+DemolitionCharge_Spender_1,Demolition Charge,16,112,45,60,7,10,1200,true,true
+DemolitionCharge_Spender_2,Demolition Charge,20,140,56,60,7,10,1200,true,true
+DemolitionCharge_Spender_3,Demolition Charge,16,112,34,70,10,20,1200,true,true
+DemolitionCharge_Spender_4,Demolition Charge,12,84,42,50,10,20,1200,true,true
+DemolitionCharge_Spender_5,Demolition Charge,20,140,56,60,20,30,1200,true,true
+DemolitionCharge_Spender_6,Demolition Charge,10,70,28,60,20,30,1200,true,true
+DemolitionCharge_Spender_7,Demolition Charge,16,112,45,60,30,40,1200,true,true
+DemolitionCharge_Spender_8,Demolition Charge,20,140,42,70,30,40,1200,true,true
+DemolitionCharge_Spender_9,Demolition Charge,20,140,70,50,40,50,1200,true,true
+DemolitionCharge_Spender_10,Demolition Charge,16,112,56,50,40,50,1200,true,true
+DemolitionCharge_Spender_11,Demolition Charge,16,112,56,50,50,,1200,true,true
+DemolitionCharge_Spender_12,Demolition Charge,20,140,56,60,50,,1200,true,true
+,,,,,,,,,,
+Shovel_Spender_1,Shovel,12,120,60,50,7,10,1200,true,true
+Shovel_Spender_2,Shovel,20,200,60,70,7,10,1200,true,true
+Shovel_Spender_3,Shovel,16,160,48,70,10,20,1200,true,true
+Shovel_Spender_4,Shovel,12,120,48,60,10,20,1200,true,true
+Shovel_Spender_5,Shovel,20,200,80,60,20,30,1200,true,true
+Shovel_Spender_6,Shovel,9,90,36,60,20,30,1200,true,true
+Shovel_Spender_7,Shovel,20,200,60,70,30,40,1200,true,true
+Shovel_Spender_8,Shovel,16,160,64,60,30,40,1200,true,true
+Shovel_Spender_9,Shovel,16,160,80,50,40,50,1200,true,true
+Shovel_Spender_10,Shovel,20,200,80,60,40,50,1200,true,true
+Shovel_Spender_11,Shovel,20,200,80,60,50,,1200,true,true
+Shovel_Spender_12,Shovel,12,120,60,50,50,,1200,true,true
+,,,,,,,,,,
+Saw_NonBuyer_1,Saw,9,45,9,80,7,10,1200,false,true
+Saw_NonBuyer_2,Saw,5,25,5,80,7,10,1200,false,true
+Saw_NonBuyer_3,Saw,5,25,5,80,10,20,1200,false,true
+Saw_NonBuyer_4,Saw,9,45,9,80,10,20,1200,false,true
+Saw_NonBuyer_5,Saw,5,25,5,80,20,30,1200,false,true
+Saw_NonBuyer_6,Saw,9,45,9,80,20,30,1200,false,true
+Saw_NonBuyer_7,Saw,5,25,5,80,30,40,1200,false,true
+Saw_NonBuyer_8,Saw,9,45,9,80,30,40,1200,false,true
+Saw_NonBuyer_9,Saw,9,45,9,80,40,50,1200,false,true
+Saw_NonBuyer_10,Saw,5,25,5,80,40,50,1200,false,true
+Saw_NonBuyer_11,Saw,12,60,12,80,50,,1200,false,true
+Saw_NonBuyer_12,Saw,5,25,5,80,50,,1200,false,true
+,,,,,,,,,,
+Axe_NonBuyer_1,Axe,5,20,4,80,7,10,1200,false,true
+Axe_NonBuyer_2,Axe,8,32,7,80,7,10,1200,false,true
+Axe_NonBuyer_3,Axe,5,20,4,80,10,20,1200,false,true
+Axe_NonBuyer_4,Axe,10,40,8,80,10,20,1200,false,true
+Axe_NonBuyer_5,Axe,5,20,4,80,20,30,1200,false,true
+Axe_NonBuyer_6,Axe,10,40,8,80,20,30,1200,false,true
+Axe_NonBuyer_7,Axe,5,20,4,80,30,40,1200,false,true
+Axe_NonBuyer_8,Axe,10,40,8,80,30,40,1200,false,true
+Axe_NonBuyer_9,Axe,8,32,7,80,40,50,1200,false,true
+Axe_NonBuyer_10,Axe,10,40,8,80,40,50,1200,false,true
+Axe_NonBuyer_11,Axe,10,40,8,80,50,,1200,false,true
+Axe_NonBuyer_12,Axe,5,20,4,80,50,,1200,false,true
+,,,,,,,,,,
+Dynamite_NonBuyer_1,Dynamite,12,36,7,80,7,10,1200,false,true
+Dynamite_NonBuyer_2,Dynamite,5,15,3,80,7,10,1200,false,true
+Dynamite_NonBuyer_3,Dynamite,5,15,3,80,10,20,1200,false,true
+Dynamite_NonBuyer_4,Dynamite,12,36,7,80,10,20,1200,false,true
+Dynamite_NonBuyer_5,Dynamite,5,15,3,80,20,30,1200,false,true
+Dynamite_NonBuyer_6,Dynamite,12,36,7,80,20,30,1200,false,true
+Dynamite_NonBuyer_7,Dynamite,5,15,3,80,30,40,1200,false,true
+Dynamite_NonBuyer_8,Dynamite,12,36,7,80,30,40,1200,false,true
+Dynamite_NonBuyer_9,Dynamite,12,36,7,80,40,50,1200,false,true
+Dynamite_NonBuyer_10,Dynamite,5,15,3,80,40,50,1200,false,true
+Dynamite_NonBuyer_11,Dynamite,12,36,7,80,50,,1200,false,true
+Dynamite_NonBuyer_12,Dynamite,5,15,3,80,50,,1200,false,true
+,,,,,,,,,,
+DemolitionCharge_NonBuyer_1,Demolition Charge,5,35,7,80,7,10,1200,false,true
+DemolitionCharge_NonBuyer_2,Demolition Charge,12,84,17,80,7,10,1200,false,true
+DemolitionCharge_NonBuyer_3,Demolition Charge,5,35,7,80,10,20,1200,false,true
+DemolitionCharge_NonBuyer_4,Demolition Charge,12,84,17,80,10,20,1200,false,true
+DemolitionCharge_NonBuyer_5,Demolition Charge,5,35,7,80,20,30,1200,false,true
+DemolitionCharge_NonBuyer_6,Demolition Charge,9,63,13,80,20,30,1200,false,true
+DemolitionCharge_NonBuyer_7,Demolition Charge,5,35,7,80,30,40,1200,false,true
+DemolitionCharge_NonBuyer_8,Demolition Charge,9,63,13,80,30,40,1200,false,true
+DemolitionCharge_NonBuyer_9,Demolition Charge,5,35,7,80,40,50,1200,false,true
+DemolitionCharge_NonBuyer_10,Demolition Charge,9,63,13,80,40,50,1200,false,true
+DemolitionCharge_NonBuyer_11,Demolition Charge,5,35,7,80,50,,1200,false,true
+DemolitionCharge_NonBuyer_12,Demolition Charge,12,84,17,80,50,,1200,false,true
+,,,,,,,,,,
+Shovel_NonBuyer_1,Shovel,5,50,10,80,7,10,1200,false,true
+Shovel_NonBuyer_2,Shovel,9,90,18,80,7,10,1200,false,true
+Shovel_NonBuyer_3,Shovel,16,160,32,80,10,20,1200,false,true
+Shovel_NonBuyer_4,Shovel,5,50,10,80,10,20,1200,false,true
+Shovel_NonBuyer_5,Shovel,5,50,10,80,20,30,1200,false,true
+Shovel_NonBuyer_6,Shovel,9,90,18,80,20,30,1200,false,true
+Shovel_NonBuyer_7,Shovel,5,50,10,80,30,40,1200,false,true
+Shovel_NonBuyer_8,Shovel,9,90,18,80,30,40,1200,false,true
+Shovel_NonBuyer_9,Shovel,5,50,10,80,40,50,1200,false,true
+Shovel_NonBuyer_10,Shovel,9,90,18,80,40,50,1200,false,true
+Shovel_NonBuyer_11,Shovel,5,50,10,80,50,,1200,false,true
+Shovel_NonBuyer_12,Shovel,9,90,18,80,50,,1200,false,true
+,,,,,,,,,,
+Pickaxe_Spender_1,Pickaxe,12,144,72,50,34,40,1200,true,true
+Pickaxe_Spender_2,Pickaxe,20,240,72,70,34,40,1200,true,true
+Pickaxe_Spender_3,Pickaxe,16,192,58,70,40,45,1200,true,true
+Pickaxe_Spender_4,Pickaxe,12,144,58,60,40,45,1200,true,true
+Pickaxe_Spender_5,Pickaxe,20,240,96,60,45,50,1200,true,true
+Pickaxe_Spender_6,Pickaxe,9,108,43,60,45,50,1200,true,true
+Pickaxe_Spender_7,Pickaxe,20,240,72,70,50,55,1200,true,true
+Pickaxe_Spender_8,Pickaxe,16,192,77,60,50,55,1200,true,true
+Pickaxe_Spender_9,Pickaxe,16,192,96,50,55,60,1200,true,true
+Pickaxe_Spender_10,Pickaxe,20,240,96,60,55,60,1200,true,true
+Pickaxe_Spender_11,Pickaxe,20,240,96,60,60,,1200,true,true
+Pickaxe_Spender_12,Pickaxe,12,144,72,50,60,,1200,true,true
+,,,,,,,,,,
+Pickaxe_NonBuyer_1,Pickaxe,5,60,12,80,34,40,1200,false,true
+Pickaxe_NonBuyer_2,Pickaxe,9,108,22,80,34,40,1200,false,true
+Pickaxe_NonBuyer_3,Pickaxe,16,192,38,80,40,45,1200,false,true
+Pickaxe_NonBuyer_4,Pickaxe,5,60,12,80,40,45,1200,false,true
+Pickaxe_NonBuyer_5,Pickaxe,5,60,12,80,45,50,1200,false,true
+Pickaxe_NonBuyer_6,Pickaxe,9,108,22,80,45,50,1200,false,true
+Pickaxe_NonBuyer_7,Pickaxe,5,60,12,80,50,55,1200,false,true
+Pickaxe_NonBuyer_8,Pickaxe,9,108,22,80,50,55,1200,false,true
+Pickaxe_NonBuyer_9,Pickaxe,5,60,12,80,55,60,1200,false,true
+Pickaxe_NonBuyer_10,Pickaxe,9,108,22,80,55,60,1200,false,true
+Pickaxe_NonBuyer_11,Pickaxe,5,60,12,80,60,,1200,false,true
+Pickaxe_NonBuyer_12,Pickaxe,9,108,22,80,60,,1200,false,true

@@ -1,0 +1,34 @@
+Name,FileName,OutlineColor,Color,RetinaFileName,Size,MarginTop,MarginBottom,MarginLeft,MarginRight,MarginDefaultFontSize,,
+String,String,String,String,String,int,int,int,int,int,int,,
+h1,font/sc_secorigbb.ttf,FF000000,FFFFFFFF,font/sc_secorigbb.ttf,30,1,2,1,1,30,SC_SecOrigBB 48pt,
+h2,font/sc_secorigbb.ttf,FF000000,FFFFFFFF,font/sc_secorigbb.ttf,23,1,2,1,1,30,SC_SecOrigBB 36pt,
+h3,font/sc_secorigbb.ttf,FF000000,FFFFFFFF,font/sc_secorigbb.ttf,17,1,2,1,1,30,SC_SecOrigBB 28pt,
+h4,font/sc_secorigbb.ttf,FF000000,FFFFFFFF,font/sc_secorigbb.ttf,15,1,2,1,1,30,SC_SecOrigBB 26pt,
+h5,font/sc_secorigbb.ttf,FF000000,FFFFFFFF,font/sc_secorigbb.ttf,12,1,2,1,1,30,SC_SecOrigBB 20pt,
+h6,font/sc_secorigbb.ttf,FF000000,FF33CCFF,font/sc_secorigbb.ttf,17,1,2,1,1,30,SC_SecOrigBB 28pt,
+t1,font/sc_ccbackbeatregular.ttf,,FF7B593D,font/sc_ccbackbeatregular.ttf,16,,,,,26,SC_CCBackBeat 16pt,
+t2,font/sc_ccbackbeatregular.ttf,,FF7B593D,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,
+t3,font/sc_ccbackbeatregular.ttf,,FF83523D,font/sc_ccbackbeatregular.ttf,24,,,,,26,SC_CCBackBeat 24pt,
+t4,font/sc_ccbackbeatregular.ttf,,FF2F2F2F,font/sc_ccbackbeatregular.ttf,20,,,,,26,SC_CCBackBeat 20pt,
+t5,font/sc_ccbackbeatregular.ttf,,FF2F2F2F,font/sc_ccbackbeatregular.ttf,16,,,,,26,SC_CCBackBeat 16pt,
+t6,font/sc_ccbackbeatregular.ttf,,FF2F2F2F,font/sc_ccbackbeatregular.ttf,8,,,,,26,SC_CCBackBeat 8pt,
+t7,font/sc_ccbackbeatregular.ttf,,FF573F2B,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,
+t8,font/sc_ccbackbeatregular.ttf,,FF7B593D,font/sc_ccbackbeatregular.ttf,9,,,,,26,SC_CCBackBeat 9pt,
+t9,font/sc_ccbackbeatregular.ttf,,FF7B593D,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,
+t10,font/sc_ccbackbeatregular.ttf,,FF7B593D,font/sc_ccbackbeatregular.ttf,12,,,,,26,SC_CCBackBeat 12pt,
+t11,font/sc_ccbackbeatregular.ttf,,FFFFEB63,font/sc_ccbackbeatregular.ttf,16,,,,,26,SC_CCBackBeat 16pt,Chat name color
+t12,font/sc_ccbackbeatregular.ttf,,FFFAFAFA,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,Chat text color
+t13,font/sc_ccbackbeatregular.ttf,,FF6B858C,font/sc_ccbackbeatregular.ttf,12,,,,,26,SC_CCBackBeat 14pt,Type and Time
+t14,font/sc_ccbackbeatregular.ttf,,FF00CB00,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,Green notification
+t15,font/sc_ccbackbeatregular.ttf,,FFFF0000,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,Red notification
+t16,font/sc_ccbackbeatregular.ttf,,FF0072BC,font/sc_ccbackbeatregular.ttf,16,,,,,26,SC_CCBackBeat 16pt,System Admin Name
+t17,font/sc_ccbackbeatregular.ttf,,FF00C8FE,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,System text
+t18,font/sc_ccbackbeatregular.ttf,,FFFFEB63,font/sc_ccbackbeatregular.ttf,12,,,,,26,SC_CCBackBeat 12pt,MOBILE - Chat name color
+t19,font/sc_ccbackbeatregular.ttf,,FFFAFAFA,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - Chat text color
+t20,font/sc_ccbackbeatregular.ttf,,FF6B858C,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - Type and Time
+t21,font/sc_ccbackbeatregular.ttf,,FF00CB00,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - Green notification
+t22,font/sc_ccbackbeatregular.ttf,,FFFF0000,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - Red notification
+t23,font/sc_ccbackbeatregular.ttf,,FF0072BC,font/sc_ccbackbeatregular.ttf,12,,,,,26,SC_CCBackBeat 12pt,MOBILE - System Admin Name
+t24,font/sc_ccbackbeatregular.ttf,,FF00C8FE,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - System text
+t25,font/sc_ccbackbeatregular.ttf,,FF00A4D0,font/sc_ccbackbeatregular.ttf,14,,,,,26,SC_CCBackBeat 14pt,News content text
+t26,font/sc_ccbackbeatregular.ttf,,FF00A4D0,font/sc_ccbackbeatregular.ttf,10,,,,,26,SC_CCBackBeat 10pt,MOBILE - News content text

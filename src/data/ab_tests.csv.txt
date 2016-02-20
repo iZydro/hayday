@@ -1,0 +1,3 @@
+"Name","FileName","RowName","ColumnName","ArrayIndex","NewIntValue","NewStringValue","NewBooleanValue","Group","Percentage","iOSOnly","AndroidOnly","SpendersOnly","NonSpendersOnly"
+"String","String","String","String","int","int","String","boolean","int","int","boolean","boolean","boolean","boolean"
+"TOS-Test","data/features.csv","NoticeDialogToSPrivacy","Enabled",,,,"true",1,25,,,,

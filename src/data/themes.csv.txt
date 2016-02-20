@@ -1,0 +1,15 @@
+Name,StartDate,EndDate,LevelLimit,ExportNamePostfix,Enabled
+String,String,String,int,String,boolean
+Halloween,2013-10-1,2013-11-12,9,_halloween,true
+Christmas,2013-12-1,2013-12-27,9,,true
+NewYear,2013-12-28,2014-1-3,9,,true
+Summer,2014-6-16,2014-8-31,9,_summer,true
+Halloween2014,2014-10-23,2014-10-23,9,_halloween,true
+Winter2014_part1,2014-11-11,2014-11-30,9,_winter,true
+Christmas2014,2014-12-01,2014-12-26,9,_winter,true
+NewYear2014,2014-12-27,2015-01-02,9,_winter,true
+Winter2014_part2,2015-01-03,2015-01-27,9,_winter,true
+ChineseNewYear,2015-02-18,2015-02-21,9,,true
+Easter2015,2015-03-27,2015-04-06,9,,true
+Summer2015,2015-6-15,2015-8-31,9,_summer,true
+Halloween2015,2015-10-12,2015-11-02,9,_halloween,true

@@ -1,0 +1,115 @@
+Name,Rewards,RewardAmounts,Probabilities
+String,String,int,int
+RewardSetML1,Plank,1,10
+,Nail,1,10
+,Bolt,1,10
+,Screw,1,10
+,Duct Tape,1,10
+,Wood Panel,1,10
+RewardSetML2,Axe,1,10
+,Saw,1,10
+,Shovel,1,10
+,Dynamite,1,10
+,Demolition Charge,1,10
+,Pickaxe,1,10
+RewardSetML3,Voucher3,1,20
+,Voucher4,1,10
+RewardSetML4,Plank,1,10
+,Nail,1,10
+,Bolt,1,10
+,Screw,1,10
+,Duct Tape,1,10
+,Wood Panel,1,10
+,Axe,1,20
+,Saw,1,20
+,Shovel,1,20
+,Dynamite,1,20
+,Demolition Charge,1,20
+RewardSetML5,Voucher1,1,20
+,Voucher2,1,20
+,Voucher3,1,10
+,Voucher4,1,10
+,FreeDiamonds,3,5
+RewardSetML6,Plank,1,20
+,Nail,1,20
+,Bolt,1,20
+,Screw,1,20
+,Duct Tape,1,20
+,Wood Panel,1,20
+,Axe,1,10
+,Saw,1,10
+,Shovel,1,10
+,Dynamite,1,10
+,Demolition Charge,1,10
+RewardSetML7,Hammer,1,10
+,Hand Drill,1,10
+,Paint Bucket,1,10
+,Stone Block,1,10
+,Brick,1,10
+,Tar Bucket,1,10
+,Land Deed,1,15
+,Mallet,1,15
+,Marker Stake,1,15
+,Pickaxe,1,10
+RewardSetML8,Plank,2,10
+,Nail,2,10
+,Bolt,2,10
+,Screw,2,10
+,Duct Tape,2,10
+,Wood Panel,2,10
+,Axe,2,10
+,Saw,2,10
+,Shovel,2,10
+,Dynamite,2,10
+,Demolition Charge,2,10
+,Pickaxe,2,10
+RewardSetML9,Voucher1,2,20
+,Voucher2,2,20
+,Voucher3,1,10
+,Voucher4,1,10
+RewardSetML10,Plank,3,10
+,Nail,3,10
+,Bolt,3,10
+,Screw,3,10
+,Duct Tape,3,10
+,Wood Panel,3,10
+,Hammer,3,10
+,Hand Drill,3,10
+,Paint Bucket,3,10
+,Stone Block,3,10
+,Brick,3,10
+,Tar Bucket,3,10
+,Land Deed,3,10
+,Mallet,3,10
+,Marker Stake,3,10
+,Voucher1,2,10
+,Voucher2,2,10
+,Voucher3,2,10
+,Voucher4,2,10
+,FreeDiamonds,5,5
+RewardSetML11,Plank,5,10
+,Nail,5,10
+,Bolt,5,10
+,Screw,5,10
+,Duct Tape,5,10
+,Wood Panel,5,10
+,Hammer,5,10
+,Hand Drill,5,10
+,Paint Bucket,5,10
+,Stone Block,5,10
+,Brick,5,10
+,Tar Bucket,5,10
+,Land Deed,5,10
+,Mallet,5,10
+,Marker Stake,5,10
+,Voucher1,3,10
+,Voucher2,3,10
+,Voucher3,3,10
+,Voucher4,3,10
+,FreeDiamonds,5,10
+,Axe,5,10
+,Saw,5,10
+,Shovel,5,10
+,Dynamite,5,10
+,Demolition Charge,5,10
+,Pickaxe,5,10

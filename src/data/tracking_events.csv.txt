@@ -1,0 +1,14 @@
+Label,Type,Product,ProductDetail,Enabled,IsEvent
+String,String,String,String,boolean,boolean
+Economy,Spend GC,*,*,,true
+Level,floater,*,*,,true
+Game,Crops,*,*,,true
+Game,UI,newspaper,shown,true,true
+Game,UI,Silo full,shown,true,true
+Game,UI,Warehouse full,shown,true,true
+Game,UI,premium_purchase,shown,true,true
+Game,UI,wheel_of_fortune,shown,true,true
+Game,UI,helpers_tab,shown,true,true
+Game,UI,leaderboards,shown,true,true
+Game,UI,event_bg,shown,true,true
+Game,UI,*,*,,true

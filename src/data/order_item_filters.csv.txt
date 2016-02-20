@@ -1,0 +1,44 @@
+Name,GoodItem,DisabledUntilDate
+String,String,String
+Filter1_SandwichBar,BLTToast,2013-12-8
+Filter2_SandwichBar,VeggieBagel,2013-12-8
+Filter3_SandwichBar,EggSandwich,2013-12-8
+Filter4_Lemons,Lemon Curd,2014-2-14
+Filter5_Lemons,Lemon,2014-2-14
+Filter6_Lemons,Lemon Pie,2014-2-14
+Filter7_Lemons,Lemon Cake,2014-2-14
+Filter8_Smoothies,GreenSmoothie,2014-3-20
+Filter9_Smoothies,BerrySmoothie,2014-3-20
+Filter10_Smoothies,YogurtSmoothie,2014-3-20
+Filter11_Cotton,Cotton,2014-7-5
+Filter12_Cotton,Cotton Fabrics,2014-7-5
+Filter13_Cotton,Cotton Shirt,2014-7-5
+Filter14_Cotton,Wooly Pants,2014-7-5
+Filter15_Cotton,Violet Dress,2014-7-5
+Filter16_Honey,Honey Apple Cake,2014-9-17
+Filter17_Honey,Lobster Skewer,2014-9-17
+Filter18_Honey,Pumpkin Soup,2014-9-17
+Filter19_Honey,Honey Popcorn,2014-9-17
+Filter20_Honey,Honey Toast,2014-9-17
+Filter21_Honey,Honey,2014-9-17
+Filter22_Honey,Honeycomb,2014-9-17
+Filter23_Wax,Beeswax,2014-10-19
+Filter24_Wax,Strawberry Candle,2014-10-19
+Filter25_Wax,Raspberry Candle,2014-10-19
+Filter26_Wax,Lemon Candle,2014-10-19
+Filter27_Duck,Duck Down,2014-12-6
+Filter28_Duck,Pillow,2014-12-6
+Filter29_Duck,Blanket,2014-12-6
+Filter30_Hats,ClocheHat,2015-3-16
+Filter31_Hats,TopHat,2015-3-16
+Filter32_Hats,SunHat,2015-3-16
+Filter33_Pasta,Raw Pasta,2015-4-25
+Filter34_Pasta,Rice Noodles,2015-4-25
+Filter35_Pasta,Noodle Soup,2015-4-25
+Filter36_Pasta,Pasta Salad,2015-4-25
+Filter37_HotDogs,Hot Dog,2015-4-25
+Filter38_HotDogs,Tofu Dog,2015-4-25
+Filter39_HotDogs,Corn Dog,2015-4-25
+Filter40_Italian,Gnocchi,2015-6-20
+Filter41_Italian,Lasagna,2015-6-20
+Filter42_Italian,Lobster Pasta,2015-6-20

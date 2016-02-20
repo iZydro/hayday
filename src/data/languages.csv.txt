@@ -1,0 +1,20 @@
+Name,IconExportName,LocalizedName,FileName,Enabled,SystemFont,WordListName
+String,String,String,String,boolean,String,String
+EN,icon_language_english,English,localization/texts.csv,true,,english
+DE,icon_language_german,Deutsch,localization/de.csv,true,,german
+ES,icon_language_spanish,Español,localization/es.csv,true,,spanish
+FR,icon_language_french,Français,localization/fr.csv,true,,french
+IT,icon_language_italian,Italiano,localization/it.csv,true,,italian
+NL,icon_language_dutch,Nederlands,localization/nl.csv,true,,dutch
+NO,icon_language_norwegian,Norsk,localization/no.csv,true,,norwegian
+PT,icon_language_brazportuguese,Português,localization/pt.csv,true,,portuguese
+TR,icon_language_turkish,Türkçe,localization/tr.csv,true,,turkish
+DA,icon_language_danish,Dansk,localization/da.csv,true,,danish
+SV,icon_language_swedish,Svenska,localization/sv.csv,true,,swedish
+ID,icon_language_indonesian,Bahasa Indonesia,localization/id.csv,true,,indonesian
+RU,icon_language_russian,Pусский,localization/ru.csv,true,HelveticaNeue-Bold,russian
+CH,icon_language_chinese,中文,localization/ch.csv,true,STHeitiSC-Medium,chinese
+JP,icon_language_japanese,日本語,localization/jp.csv,true,HiraKakuProN-W6,japanese
+FI,icon_language_finnish,Suomi,localization/fi.csv,true,,finnish
+KR,icon_language_korea,한국어,localization/kr.csv,true,,korean
+AR,icon_language_korea,العربية,localization/ar.csv,true,,arabic

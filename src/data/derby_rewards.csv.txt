@@ -1,0 +1,1617 @@
+Name,Rewards,RewardAmounts,Probabilities
+String,String,int,int
+DerbyRewardSet1_18_rookie,Axe,1,6
+,Saw,1,6
+,Shovel,1,6
+,Dynamite,1,6
+,Demolition Charge,1,6
+,Pickaxe,1,6
+,Brown_Sugar,3,4
+,White Sugar,3,4
+,Vanilla Ice Cream,1,4
+,Apple Jam,1,4
+,Raspberry,5,4
+,Cherry,5,4
+,Blackberry,5,4
+,Apple,5,4
+,Honey,3,4
+,Cream,3,4
+,Butter,3,4
+,Cheese,3,4
+,Goat Cheese,3,4
+DerbyRewardSet2_18_rookie,Axe,1,4
+,Saw,1,4
+,Shovel,1,4
+,Dynamite,1,4
+,Demolition Charge,1,4
+,Pickaxe,1,4
+,Land Deed,1,7
+,Mallet,1,7
+,Marker Stake,1,7
+,White Sugar,3,2
+,Syrup,3,2
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,2
+,Blackberry Jam,1,2
+,Raspberry,5,2
+,Cherry,5,2
+,Blackberry,5,2
+,Apple,5,2
+,Honey,3,2
+,Cream,3,2
+,Butter,3,2
+,Cheese,3,2
+,Goat Cheese,3,2
+DerbyRewardSet3_18_rookie,Axe,1,3
+,Saw,1,3
+,Shovel,1,3
+,Dynamite,1,3
+,Demolition Charge,1,3
+,Pickaxe,1,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Brown_Sugar,5,4
+,White Sugar,5,4
+,Syrup,5,4
+,Strawberry Ice Cream,2,4
+,Chocolate Ice Cream,2,4
+,Blackberry Jam,2,4
+,Cherry Jam,2,4
+DerbyRewardSet4_18_rookie,Axe,2,4
+,Saw,2,4
+,Shovel,2,4
+,Dynamite,2,4
+,Demolition Charge,2,4
+,Pickaxe,1,4
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Voucher1,1,2
+DerbyRewardSet5_18_rookie,FreeDiamonds,2,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,HayFence,1,1
+,GrassFenceS,1,1
+DerbyRewardSetBronze_18_rookie,Axe,3,2
+,Saw,3,2
+,Shovel,2,2
+,Dynamite,2,2
+,Demolition Charge,2,2
+,Pickaxe,2,2
+,Plank,2,4
+,Nail,2,4
+,Bolt,2,4
+,Screw,2,4
+,Duct Tape,2,4
+,Wood Panel,2,4
+,Land Deed,2,3
+,Mallet,2,3
+,Marker Stake,2,3
+,Hammer,2,1
+,Hand Drill,2,1
+,Paint Bucket,2,1
+,Stone Block,2,1
+,Brick,2,1
+,Tar Bucket,2,1
+,Voucher3,1,2
+DerbyRewardSetSilver_18_rookie,Axe,4,2
+,Saw,4,2
+,Shovel,3,2
+,Dynamite,3,2
+,Demolition Charge,3,2
+,Pickaxe,3,2
+,Plank,3,4
+,Nail,3,4
+,Bolt,3,4
+,Screw,3,4
+,Duct Tape,3,4
+,Wood Panel,3,4
+,Land Deed,3,3
+,Mallet,3,3
+,Marker Stake,3,3
+,Hammer,3,1
+,Hand Drill,3,1
+,Paint Bucket,3,1
+,Stone Block,3,1
+,Brick,3,1
+,Tar Bucket,3,1
+,Voucher3,2,2
+,Voucher4,1,2
+DerbyRewardSetGold_18_rookie,Axe,5,6
+,Pickaxe,5,6
+,Plank,4,4
+,Nail,4,4
+,Bolt,4,4
+,Screw,4,4
+,Duct Tape,4,4
+,Wood Panel,4,4
+,Land Deed,4,3
+,Mallet,4,3
+,Marker Stake,4,3
+,Hammer,4,1
+,Hand Drill,4,1
+,Paint Bucket,4,1
+,Stone Block,4,1
+,Brick,4,1
+,Tar Bucket,4,1
+,Voucher3,3,3
+,Voucher4,2,3
+DerbyRewardSet1_41_rookie,Axe,1,6
+,Saw,1,6
+,Shovel,1,6
+,Dynamite,1,6
+,Demolition Charge,1,6
+,Pickaxe,1,6
+,Brown_Sugar,3,3
+,White Sugar,3,3
+,Vanilla Ice Cream,1,3
+,Apple Jam,1,3
+,Raspberry,5,3
+,Cherry,5,3
+,Blackberry,5,3
+,Apple,5,3
+,Honey,3,3
+,Cream,3,3
+,Butter,3,3
+,Cheese,3,3
+,Goat Cheese,3,3
+,Lobster Meat,1,3
+,Duck Down,1,3
+,Bracelet,1,3
+,SoySauce,1,3
+DerbyRewardSet2_41_rookie,Axe,1,4
+,Saw,1,4
+,Shovel,1,4
+,Dynamite,1,4
+,Demolition Charge,1,4
+,Pickaxe,1,4
+,Land Deed,1,7
+,Mallet,1,7
+,Marker Stake,1,7
+,White Sugar,3,2
+,Syrup,3,2
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,1
+,Blackberry Jam,1,1
+,Raspberry,5,2
+,Cherry,5,2
+,Blackberry,5,2
+,Apple,5,2
+,Honey,3,2
+,Cream,3,2
+,Butter,3,2
+,Cheese,3,2
+,Goat Cheese,3,2
+,Lobster Meat,2,1
+,Duck Down,2,1
+DerbyRewardSet3_41_rookie,Axe,1,3
+,Saw,1,3
+,Shovel,1,3
+,Dynamite,1,3
+,Demolition Charge,1,3
+,Pickaxe,1,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Brown_Sugar,5,2
+,White Sugar,5,3
+,Syrup,5,3
+,Strawberry Ice Cream,2,3
+,Chocolate Ice Cream,2,3
+,Blackberry Jam,2,3
+,Cherry Jam,2,3
+,Lobster Meat,2,4
+,Duck Down,2,4
+DerbyRewardSet4_41_rookie,Axe,2,4
+,Saw,2,4
+,Shovel,2,4
+,Dynamite,2,4
+,Demolition Charge,2,4
+,Pickaxe,1,4
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Voucher1,1,2
+DerbyRewardSet5_41_rookie,FreeDiamonds,2,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,HayFence,1,1
+,GrassFenceS,1,1
+DerbyRewardSetBronze_41_rookie,Axe,3,2
+,Saw,3,2
+,Shovel,2,2
+,Dynamite,2,2
+,Demolition Charge,2,2
+,Pickaxe,2,2
+,Plank,2,4
+,Nail,2,4
+,Bolt,2,4
+,Screw,2,4
+,Duct Tape,2,4
+,Wood Panel,2,4
+,Land Deed,2,3
+,Mallet,2,3
+,Marker Stake,2,3
+,Hammer,2,1
+,Hand Drill,2,1
+,Paint Bucket,2,1
+,Stone Block,2,1
+,Brick,2,1
+,Tar Bucket,2,1
+,Voucher3,1,2
+DerbyRewardSetSilver_41_rookie,Axe,4,2
+,Saw,4,2
+,Shovel,3,2
+,Dynamite,3,2
+,Demolition Charge,3,2
+,Pickaxe,3,2
+,Plank,3,4
+,Nail,3,4
+,Bolt,3,4
+,Screw,3,4
+,Duct Tape,3,4
+,Wood Panel,3,4
+,Land Deed,3,3
+,Mallet,3,3
+,Marker Stake,3,3
+,Hammer,3,1
+,Hand Drill,3,1
+,Paint Bucket,3,1
+,Stone Block,3,1
+,Brick,3,1
+,Tar Bucket,3,1
+,Voucher3,2,2
+,Voucher4,1,2
+DerbyRewardSetGold_41_rookie,Axe,5,6
+,Pickaxe,5,6
+,Plank,4,4
+,Nail,4,4
+,Bolt,4,4
+,Screw,4,4
+,Duct Tape,4,4
+,Wood Panel,4,4
+,Land Deed,4,3
+,Mallet,4,3
+,Marker Stake,4,3
+,Hammer,4,1
+,Hand Drill,4,1
+,Paint Bucket,4,1
+,Stone Block,4,1
+,Brick,4,1
+,Tar Bucket,4,1
+,Voucher3,3,3
+,Voucher4,2,3
+DerbyRewardSet1_18_novice,Axe,1,9
+,Saw,1,9
+,Shovel,1,9
+,Dynamite,1,9
+,Demolition Charge,1,9
+,Pickaxe,1,9
+,Brown_Sugar,5,3
+,White Sugar,5,3
+,Vanilla Ice Cream,1,3
+,Apple Jam,1,3
+,Raspberry,9,3
+,Cherry,9,3
+,Blackberry,9,3
+,Apple,9,3
+,Honey,5,3
+,Cream,5,3
+,Butter,5,3
+,Cheese,3,3
+,Goat Cheese,3,3
+DerbyRewardSet2_18_novice,Axe,1,5
+,Saw,1,5
+,Shovel,1,5
+,Dynamite,1,5
+,Demolition Charge,1,5
+,Pickaxe,1,5
+,Land Deed,1,10
+,Mallet,1,10
+,Marker Stake,1,10
+,White Sugar,3,2
+,Syrup,3,2
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,2
+,Blackberry Jam,1,2
+,Raspberry,9,2
+,Cherry,9,2
+,Blackberry,9,2
+,Apple,9,2
+,Honey,3,2
+,Cream,3,2
+,Butter,3,2
+,Cheese,3,2
+,Goat Cheese,3,2
+DerbyRewardSet3_18_novice,FreeDiamonds,2,2
+,Axe,2,3
+,Saw,2,3
+,Shovel,2,3
+,Dynamite,2,3
+,Demolition Charge,2,3
+,Pickaxe,2,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Brown_Sugar,5,3
+,White Sugar,5,3
+,Syrup,5,3
+,Strawberry Ice Cream,2,3
+,Chocolate Ice Cream,2,3
+,Blackberry Jam,2,3
+,Cherry Jam,2,3
+DerbyRewardSet4_18_novice,FreeDiamonds,2,4
+,Axe,2,7
+,Saw,2,7
+,Shovel,2,7
+,Dynamite,2,7
+,Demolition Charge,2,7
+,Pickaxe,2,7
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,4
+,Hand Drill,1,4
+,Paint Bucket,1,4
+,Stone Block,1,4
+,Brick,1,4
+,Tar Bucket,1,4
+,Map Piece,1,1
+,Voucher1,2,4
+,Voucher2,2,4
+DerbyRewardSet5_18_novice,FreeDiamonds,2,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,1,1
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_18_novice,FreeDiamonds,2,7
+,Plank,2,18
+,Nail,2,18
+,Bolt,2,18
+,Screw,2,18
+,Duct Tape,2,18
+,Wood Panel,2,18
+,Land Deed,2,18
+,Mallet,2,18
+,Marker Stake,2,18
+,Hammer,2,6
+,Hand Drill,2,6
+,Paint Bucket,2,6
+,Stone Block,2,6
+,Brick,2,6
+,Tar Bucket,2,6
+,Map Piece,2,1
+,Voucher3,1,9
+,GrassFenceL,1,5
+DerbyRewardSetBronze_18_novice,Axe,3,2
+,Saw,3,2
+,Shovel,2,2
+,Dynamite,2,2
+,Demolition Charge,2,2
+,Pickaxe,2,2
+,Plank,2,4
+,Nail,2,4
+,Bolt,2,4
+,Screw,2,4
+,Duct Tape,2,4
+,Wood Panel,2,4
+,Land Deed,2,3
+,Mallet,2,3
+,Marker Stake,2,3
+,Hammer,2,1
+,Hand Drill,2,1
+,Paint Bucket,2,1
+,Stone Block,2,1
+,Brick,2,1
+,Tar Bucket,2,1
+,Voucher3,1,2
+,Voucher4,1,2
+DerbyRewardSetSilver_18_novice,Axe,4,6
+,Saw,4,6
+,Shovel,3,6
+,Dynamite,3,6
+,Demolition Charge,3,6
+,Pickaxe,3,6
+,Plank,3,12
+,Nail,3,12
+,Bolt,3,12
+,Screw,3,12
+,Duct Tape,3,12
+,Wood Panel,3,12
+,Land Deed,3,9
+,Mallet,3,9
+,Marker Stake,3,9
+,Hammer,3,2
+,Hand Drill,3,2
+,Paint Bucket,3,2
+,Stone Block,3,2
+,Brick,3,2
+,Tar Bucket,3,2
+,Voucher3,2,7
+,Voucher4,1,7
+DerbyRewardSetGold_18_novice,Axe,5,6
+,Saw,5,6
+,Shovel,4,6
+,Dynamite,4,6
+,Demolition Charge,4,6
+,Pickaxe,4,6
+,Plank,3,12
+,Nail,3,12
+,Bolt,3,12
+,Screw,3,12
+,Duct Tape,3,12
+,Wood Panel,3,12
+,Land Deed,3,9
+,Mallet,3,9
+,Marker Stake,3,9
+,Hammer,3,2
+,Hand Drill,3,2
+,Paint Bucket,3,2
+,Stone Block,3,2
+,Brick,3,2
+,Tar Bucket,3,2
+,Voucher3,2,7
+,Voucher4,2,7
+DerbyRewardSet1_41_novice,Axe,1,9
+,Saw,1,9
+,Shovel,1,9
+,Dynamite,1,9
+,Demolition Charge,1,9
+,Pickaxe,1,9
+,Brown_Sugar,5,3
+,White Sugar,5,3
+,Vanilla Ice Cream,1,2
+,Apple Jam,1,2
+,Raspberry,9,2
+,Cherry,9,2
+,Blackberry,9,2
+,Apple,9,2
+,Honey,5,3
+,Cream,5,3
+,Butter,5,3
+,Cheese,3,3
+,Goat Cheese,3,3
+,Lobster Meat,2,2
+,Duck Down,2,2
+,Bracelet,1,2
+,SoySauce,1,2
+DerbyRewardSet2_41_novice,Axe,1,5
+,Saw,1,5
+,Shovel,1,5
+,Dynamite,1,5
+,Demolition Charge,1,5
+,Pickaxe,1,5
+,Land Deed,1,10
+,Mallet,1,10
+,Marker Stake,1,10
+,White Sugar,3,2
+,Syrup,3,2
+,Cherry Popsicle,1,1
+,Raspberry Jam,1,1
+,Blackberry Jam,1,1
+,Raspberry,9,2
+,Cherry,9,2
+,Blackberry,9,2
+,Apple,9,2
+,Honey,3,2
+,Cream,3,2
+,Butter,3,2
+,Cheese,3,2
+,Goat Cheese,3,2
+,Lollipop,1,1
+,Lobster Meat,2,1
+,Duck Down,2,1
+DerbyRewardSet3_41_novice,FreeDiamonds,2,2
+,Axe,2,3
+,Saw,2,3
+,Shovel,2,3
+,Dynamite,2,3
+,Demolition Charge,2,3
+,Pickaxe,2,3
+,Plank,1,6
+,Nail,1,6
+,Bolt,1,6
+,Screw,1,6
+,Duct Tape,1,6
+,Wood Panel,1,6
+,Land Deed,1,6
+,Mallet,1,6
+,Marker Stake,1,6
+,Hammer,1,2
+,Hand Drill,1,2
+,Paint Bucket,1,2
+,Stone Block,1,2
+,Brick,1,2
+,Tar Bucket,1,2
+,Map Piece,1,1
+,Brown_Sugar,5,2
+,White Sugar,5,2
+,Syrup,5,2
+,Strawberry Ice Cream,2,2
+,Chocolate Ice Cream,2,3
+,Blackberry Jam,2,2
+,Cherry Jam,2,2
+,Lobster Meat,2,3
+,Duck Down,2,3
+DerbyRewardSet4_41_novice,FreeDiamonds,2,4
+,Axe,2,7
+,Saw,2,7
+,Shovel,2,7
+,Dynamite,2,7
+,Demolition Charge,2,7
+,Pickaxe,2,7
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,4
+,Hand Drill,1,4
+,Paint Bucket,1,4
+,Stone Block,1,4
+,Brick,1,4
+,Tar Bucket,1,4
+,Map Piece,1,1
+,Voucher1,2,4
+,Voucher2,2,4
+DerbyRewardSet5_41_novice,FreeDiamonds,2,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,1,1
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_41_novice,FreeDiamonds,2,7
+,Plank,2,18
+,Nail,2,18
+,Bolt,2,18
+,Screw,2,18
+,Duct Tape,2,18
+,Wood Panel,2,18
+,Land Deed,2,18
+,Mallet,2,18
+,Marker Stake,2,18
+,Hammer,2,6
+,Hand Drill,2,6
+,Paint Bucket,2,6
+,Stone Block,2,6
+,Brick,2,6
+,Tar Bucket,2,6
+,Map Piece,2,1
+,Voucher3,1,9
+,GrassFenceL,1,5
+DerbyRewardSetBronze_41_novice,Axe,4,2
+,Saw,4,2
+,Shovel,3,2
+,Dynamite,3,2
+,Demolition Charge,3,2
+,Pickaxe,3,2
+,Plank,2,4
+,Nail,2,4
+,Bolt,2,4
+,Screw,2,4
+,Duct Tape,2,4
+,Wood Panel,2,4
+,Land Deed,2,3
+,Mallet,2,3
+,Marker Stake,2,3
+,Hammer,2,1
+,Hand Drill,2,1
+,Paint Bucket,2,1
+,Stone Block,2,1
+,Brick,2,1
+,Tar Bucket,2,1
+,Voucher3,1,2
+,Voucher4,1,2
+DerbyRewardSetSilver_41_novice,Axe,5,6
+,Saw,5,6
+,Shovel,3,6
+,Dynamite,3,6
+,Demolition Charge,3,6
+,Pickaxe,3,6
+,Plank,3,12
+,Nail,3,12
+,Bolt,3,12
+,Screw,3,12
+,Duct Tape,3,12
+,Wood Panel,3,12
+,Land Deed,3,9
+,Mallet,3,9
+,Marker Stake,3,9
+,Hammer,3,2
+,Hand Drill,3,2
+,Paint Bucket,3,2
+,Stone Block,3,2
+,Brick,3,2
+,Tar Bucket,3,2
+,Voucher3,2,7
+,Voucher4,1,7
+DerbyRewardSetGold_41_novice,Axe,6,6
+,Saw,6,6
+,Shovel,4,6
+,Dynamite,4,6
+,Demolition Charge,4,6
+,Pickaxe,4,6
+,Plank,3,12
+,Nail,3,12
+,Bolt,3,12
+,Screw,3,12
+,Duct Tape,3,12
+,Wood Panel,3,12
+,Land Deed,3,9
+,Mallet,3,9
+,Marker Stake,3,9
+,Hammer,3,2
+,Hand Drill,3,2
+,Paint Bucket,3,2
+,Stone Block,3,2
+,Brick,3,2
+,Tar Bucket,3,2
+,Voucher3,2,7
+,Voucher4,2,7
+DerbyRewardSet1_18_pro,Axe,2,7
+,Saw,2,7
+,Shovel,1,7
+,Dynamite,2,7
+,Demolition Charge,1,7
+,Pickaxe,1,7
+,Brown_Sugar,5,4
+,White Sugar,5,4
+,Vanilla Ice Cream,1,4
+,Apple Jam,1,4
+,Honey,5,4
+,Cream,5,4
+,Butter,5,4
+,Cheese,3,4
+,Goat Cheese,3,4
+DerbyRewardSet2_18_pro,Axe,2,5
+,Saw,2,5
+,Shovel,1,5
+,Dynamite,1,5
+,Demolition Charge,1,5
+,Pickaxe,1,5
+,Land Deed,1,10
+,Mallet,1,10
+,Marker Stake,1,10
+,Voucher1,1,4
+,White Sugar,5,3
+,Syrup,4,3
+,Cherry Popsicle,1,3
+,Raspberry Jam,1,3
+,Blackberry Jam,1,3
+,Honey,5,3
+,Cream,5,3
+,Butter,5,3
+,Cheese,3,3
+,Goat Cheese,3,3
+DerbyRewardSet3_18_pro,FreeDiamonds,2,4
+,Axe,2,5
+,Saw,2,5
+,Shovel,2,5
+,Dynamite,2,5
+,Demolition Charge,2,5
+,Pickaxe,2,5
+,Plank,1,9
+,Nail,1,9
+,Bolt,1,9
+,Screw,1,9
+,Duct Tape,1,9
+,Wood Panel,1,9
+,Land Deed,1,9
+,Mallet,1,9
+,Marker Stake,1,9
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher1,1,3
+,Voucher2,1,3
+,Brown_Sugar,5,4
+,White Sugar,5,4
+,Syrup,5,4
+,Strawberry Ice Cream,2,4
+,Chocolate Ice Cream,2,4
+,Blackberry Jam,2,4
+,Cherry Jam,2,4
+DerbyRewardSet4_18_pro,FreeDiamonds,2,6
+,Axe,2,9
+,Saw,2,9
+,Shovel,2,9
+,Dynamite,2,9
+,Demolition Charge,2,9
+,Pickaxe,2,9
+,Plank,1,18
+,Nail,1,18
+,Bolt,1,18
+,Screw,1,18
+,Duct Tape,1,18
+,Wood Panel,1,18
+,Land Deed,1,18
+,Mallet,1,18
+,Marker Stake,1,18
+,Hammer,1,5
+,Hand Drill,1,5
+,Paint Bucket,1,5
+,Stone Block,1,5
+,Brick,1,5
+,Tar Bucket,1,5
+,Map Piece,1,1
+,Voucher1,2,6
+,Voucher2,2,6
+,Voucher3,1,6
+DerbyRewardSet5_18_pro,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,1,1
+,Voucher3,2,6
+,Voucher4,1,6
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_18_pro,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,2,1
+,Voucher3,2,4
+,Voucher4,1,4
+,GrassFenceL,1,4
+DerbyRewardSet7_18_pro,FreeDiamonds,3,3
+,Plank,2,6
+,Nail,2,6
+,Bolt,2,6
+,Screw,2,6
+,Duct Tape,2,6
+,Wood Panel,2,6
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,2,3
+,Voucher4,1,3
+,CrossFence,1,2
+DerbyRewardSetBronze_18_pro,Axe,5,3
+,Saw,5,3
+,Shovel,3,3
+,Dynamite,3,3
+,Demolition Charge,3,3
+,Pickaxe,3,3
+,Plank,2,8
+,Nail,2,8
+,Bolt,2,8
+,Screw,2,8
+,Duct Tape,2,8
+,Wood Panel,2,8
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,1,6
+,Voucher4,1,6
+,RockingHorse,1,4
+DerbyRewardSetSilver_18_pro,Axe,6,4
+,Saw,6,4
+,Shovel,4,4
+,Dynamite,4,4
+,Demolition Charge,4,4
+,Pickaxe,4,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,5
+,Voucher4,1,5
+,RockingHorse,1,5
+DerbyRewardSetGold_18_pro,Axe,7,4
+,Saw,7,4
+,Shovel,5,4
+,Dynamite,5,4
+,Demolition Charge,5,4
+,Pickaxe,5,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,5
+DerbyRewardSet1_41_pro,Axe,2,7
+,Saw,2,7
+,Shovel,1,7
+,Dynamite,2,7
+,Demolition Charge,1,7
+,Pickaxe,1,7
+,Brown_Sugar,5,3
+,White Sugar,5,3
+,Vanilla Ice Cream,1,3
+,Apple Jam,1,2
+,Honey,5,3
+,Cream,5,3
+,Butter,5,3
+,Cheese,3,3
+,Goat Cheese,3,3
+,Lobster Meat,2,3
+,Duck Down,2,3
+,Bracelet,1,2
+,SoySauce,1,2
+DerbyRewardSet2_41_pro,Axe,2,5
+,Saw,2,5
+,Shovel,1,5
+,Dynamite,1,5
+,Demolition Charge,1,5
+,Pickaxe,1,5
+,Land Deed,1,10
+,Mallet,1,10
+,Marker Stake,1,10
+,Voucher1,1,4
+,White Sugar,5,2
+,Syrup,4,2
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,3
+,Blackberry Jam,1,3
+,Honey,5,2
+,Cream,5,2
+,Butter,5,2
+,Cheese,3,3
+,Goat Cheese,3,3
+,Lollipop,1,2
+,Lobster Meat,2,2
+,Duck Down,2,2
+DerbyRewardSet3_41_pro,FreeDiamonds,2,4
+,Axe,2,5
+,Saw,2,5
+,Shovel,2,5
+,Dynamite,2,5
+,Demolition Charge,2,5
+,Pickaxe,2,5
+,Plank,1,9
+,Nail,1,9
+,Bolt,1,9
+,Screw,1,9
+,Duct Tape,1,9
+,Wood Panel,1,9
+,Land Deed,1,9
+,Mallet,1,9
+,Marker Stake,1,9
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher1,1,3
+,Voucher2,1,3
+,Brown_Sugar,5,3
+,White Sugar,5,3
+,Syrup,5,3
+,Strawberry Ice Cream,2,3
+,Chocolate Ice Cream,2,3
+,Blackberry Jam,2,3
+,Cherry Jam,2,3
+,Lobster Meat,2,3
+,Duck Down,2,3
+DerbyRewardSet4_41_pro,FreeDiamonds,2,6
+,Axe,2,9
+,Saw,2,9
+,Shovel,2,9
+,Dynamite,2,9
+,Demolition Charge,2,9
+,Pickaxe,2,9
+,Plank,1,18
+,Nail,1,18
+,Bolt,1,18
+,Screw,1,18
+,Duct Tape,1,18
+,Wood Panel,1,18
+,Land Deed,1,18
+,Mallet,1,18
+,Marker Stake,1,18
+,Hammer,1,5
+,Hand Drill,1,5
+,Paint Bucket,1,5
+,Stone Block,1,5
+,Brick,1,5
+,Tar Bucket,1,5
+,Map Piece,1,1
+,Voucher1,2,6
+,Voucher2,2,6
+,Voucher3,1,6
+DerbyRewardSet5_41_pro,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,1,1
+,Voucher3,2,6
+,Voucher4,1,6
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_41_pro,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,4
+,Hand Drill,2,4
+,Paint Bucket,2,4
+,Stone Block,2,4
+,Brick,2,4
+,Tar Bucket,2,4
+,Map Piece,2,1
+,Voucher3,2,4
+,Voucher4,1,4
+,GrassFenceL,1,4
+DerbyRewardSet7_41_pro,FreeDiamonds,3,3
+,Plank,2,6
+,Nail,2,6
+,Bolt,2,6
+,Screw,2,6
+,Duct Tape,2,6
+,Wood Panel,2,6
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,2,3
+,Voucher4,1,3
+,CrossFence,1,2
+DerbyRewardSetBronze_41_pro,Axe,6,3
+,Saw,6,3
+,Shovel,4,3
+,Dynamite,4,3
+,Demolition Charge,4,3
+,Pickaxe,4,3
+,Plank,2,8
+,Nail,2,8
+,Bolt,2,8
+,Screw,2,8
+,Duct Tape,2,8
+,Wood Panel,2,8
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,1,6
+,Voucher4,1,6
+,RockingHorse,1,4
+DerbyRewardSetSilver_41_pro,Axe,7,4
+,Saw,7,4
+,Shovel,5,4
+,Dynamite,5,4
+,Demolition Charge,5,4
+,Pickaxe,5,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,5
+,Voucher4,1,5
+,RockingHorse,1,5
+DerbyRewardSetGold_41_pro,Axe,8,4
+,Saw,8,4
+,Shovel,5,4
+,Dynamite,5,4
+,Demolition Charge,5,4
+,Pickaxe,5,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,5
+DerbyRewardSet1_18_expert,Axe,2,15
+,Saw,2,15
+,Shovel,1,15
+,Dynamite,2,15
+,Demolition Charge,1,15
+,Pickaxe,1,15
+,Brown_Sugar,5,8
+,White Sugar,5,8
+,Vanilla Ice Cream,1,8
+,Apple Jam,1,8
+,Honey,5,8
+,Cream,5,8
+,Butter,5,8
+,Cheese,5,8
+,Goat Cheese,5,8
+DerbyRewardSet2_18_expert,Axe,2,5
+,Saw,2,5
+,Shovel,1,5
+,Dynamite,2,5
+,Demolition Charge,2,5
+,Pickaxe,1,5
+,Land Deed,2,10
+,Mallet,2,10
+,Marker Stake,2,10
+,Voucher1,2,4
+,White Sugar,6,2
+,Syrup,5,2
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,2
+,Blackberry Jam,1,2
+,Honey,6,2
+,Cream,6,2
+,Butter,6,2
+,Cheese,4,2
+,Goat Cheese,4,2
+DerbyRewardSet3_18_expert,FreeDiamonds,2,4
+,Axe,2,6
+,Saw,2,6
+,Shovel,2,6
+,Dynamite,2,6
+,Demolition Charge,2,6
+,Pickaxe,2,6
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher1,1,4
+,Voucher2,1,4
+DerbyRewardSet4_18_expert,FreeDiamonds,2,4
+,Axe,2,6
+,Saw,2,6
+,Shovel,2,6
+,Dynamite,2,6
+,Demolition Charge,2,6
+,Pickaxe,2,6
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher2,2,4
+,Voucher3,1,4
+DerbyRewardSet5_18_expert,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,3
+,Hand Drill,2,3
+,Paint Bucket,2,3
+,Stone Block,2,3
+,Brick,2,3
+,Tar Bucket,2,3
+,Map Piece,1,1
+,Voucher3,2,6
+,Voucher4,2,6
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_18_expert,FreeDiamonds,3,12
+,Plank,2,24
+,Nail,2,24
+,Bolt,2,24
+,Screw,2,24
+,Duct Tape,2,24
+,Wood Panel,2,24
+,Land Deed,2,24
+,Mallet,2,24
+,Marker Stake,2,24
+,Hammer,2,8
+,Hand Drill,2,8
+,Paint Bucket,2,8
+,Stone Block,2,8
+,Brick,2,8
+,Tar Bucket,2,8
+,Map Piece,2,1
+,Voucher3,2,9
+,Voucher4,2,8
+,GrassFenceL,1,9
+DerbyRewardSet7_18_expert,FreeDiamonds,3,3
+,Plank,2,6
+,Nail,2,6
+,Bolt,2,6
+,Screw,2,6
+,Duct Tape,2,6
+,Wood Panel,2,6
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,2,3
+,Voucher4,2,3
+,CrossFence,1,2
+DerbyRewardSet8_18_expert,FreeDiamonds,3,3
+,Plank,3,6
+,Nail,3,6
+,Bolt,3,6
+,Screw,3,6
+,Duct Tape,3,6
+,Wood Panel,3,6
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,3
+,Voucher4,2,3
+,WhiteFence,1,2
+DerbyRewardSetBronze_18_expert,Axe,6,4
+,Saw,6,4
+,Shovel,3,4
+,Dynamite,3,4
+,Demolition Charge,3,4
+,Pickaxe,3,4
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,9
+,Mallet,2,9
+,Marker Stake,2,9
+,Voucher3,2,9
+,Voucher4,2,9
+,RockingHorse,1,3
+,HorseTopiary,1,3
+DerbyRewardSetSilver_18_expert,Axe,7,4
+,Saw,7,4
+,Shovel,4,4
+,Dynamite,4,4
+,Demolition Charge,4,4
+,Pickaxe,4,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,7
+,Mallet,3,7
+,Marker Stake,3,7
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,3
+,HorseTopiary,1,3
+DerbyRewardSetGold_18_expert,Axe,8,4
+,Saw,8,4
+,Shovel,5,4
+,Dynamite,5,4
+,Demolition Charge,5,4
+,Pickaxe,5,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,7
+,Mallet,3,7
+,Marker Stake,3,7
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,3
+,HorseTopiary,1,3
+DerbyRewardSet1_41_expert,Axe,2,15
+,Saw,2,15
+,Shovel,1,15
+,Dynamite,2,15
+,Demolition Charge,1,15
+,Pickaxe,1,15
+,Brown_Sugar,5,6
+,White Sugar,5,6
+,Vanilla Ice Cream,1,6
+,Apple Jam,1,6
+,Honey,5,5
+,Cream,5,5
+,Butter,5,6
+,Cheese,5,6
+,Goat Cheese,5,6
+,Lobster Meat,2,5
+,Duck Down,2,5
+,Bracelet,1,5
+,SoySauce,1,5
+DerbyRewardSet2_41_expert,Axe,2,5
+,Saw,2,5
+,Shovel,1,5
+,Dynamite,2,5
+,Demolition Charge,2,5
+,Pickaxe,1,5
+,Land Deed,2,10
+,Mallet,2,10
+,Marker Stake,2,10
+,Voucher1,2,4
+,White Sugar,6,1
+,Syrup,5,1
+,Cherry Popsicle,1,2
+,Raspberry Jam,1,2
+,Blackberry Jam,1,2
+,Honey,6,1
+,Cream,6,1
+,Butter,6,1
+,Cheese,4,2
+,Goat Cheese,4,2
+,Lollipop,1,1
+,Lobster Meat,2,2
+,Duck Down,2,2
+DerbyRewardSet3_41_expert,FreeDiamonds,2,4
+,Axe,2,6
+,Saw,2,6
+,Shovel,2,6
+,Dynamite,2,6
+,Demolition Charge,2,6
+,Pickaxe,2,6
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher1,1,4
+,Voucher2,1,4
+DerbyRewardSet4_41_expert,FreeDiamonds,2,4
+,Axe,2,6
+,Saw,2,6
+,Shovel,2,6
+,Dynamite,2,6
+,Demolition Charge,2,6
+,Pickaxe,2,6
+,Plank,1,12
+,Nail,1,12
+,Bolt,1,12
+,Screw,1,12
+,Duct Tape,1,12
+,Wood Panel,1,12
+,Land Deed,1,12
+,Mallet,1,12
+,Marker Stake,1,12
+,Hammer,1,3
+,Hand Drill,1,3
+,Paint Bucket,1,3
+,Stone Block,1,3
+,Brick,1,3
+,Tar Bucket,1,3
+,Map Piece,1,1
+,Voucher2,2,4
+,Voucher3,1,4
+DerbyRewardSet5_41_expert,FreeDiamonds,3,6
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,12
+,Mallet,2,12
+,Marker Stake,2,12
+,Hammer,2,3
+,Hand Drill,2,3
+,Paint Bucket,2,3
+,Stone Block,2,3
+,Brick,2,3
+,Tar Bucket,2,3
+,Map Piece,1,1
+,Voucher3,2,6
+,Voucher4,2,6
+,HayFence,1,2
+,GrassFenceS,1,2
+DerbyRewardSet6_41_expert,FreeDiamonds,3,12
+,Plank,2,24
+,Nail,2,24
+,Bolt,2,24
+,Screw,2,24
+,Duct Tape,2,24
+,Wood Panel,2,24
+,Land Deed,2,24
+,Mallet,2,24
+,Marker Stake,2,24
+,Hammer,2,8
+,Hand Drill,2,8
+,Paint Bucket,2,8
+,Stone Block,2,8
+,Brick,2,8
+,Tar Bucket,2,8
+,Map Piece,2,1
+,Voucher3,2,9
+,Voucher4,2,8
+,GrassFenceL,1,9
+DerbyRewardSet7_41_expert,FreeDiamonds,3,3
+,Plank,2,6
+,Nail,2,6
+,Bolt,2,6
+,Screw,2,6
+,Duct Tape,2,6
+,Wood Panel,2,6
+,Land Deed,2,6
+,Mallet,2,6
+,Marker Stake,2,6
+,Voucher3,2,3
+,Voucher4,2,3
+,CrossFence,1,2
+DerbyRewardSet8_41_expert,FreeDiamonds,3,3
+,Plank,3,6
+,Nail,3,6
+,Bolt,3,6
+,Screw,3,6
+,Duct Tape,3,6
+,Wood Panel,3,6
+,Land Deed,3,6
+,Mallet,3,6
+,Marker Stake,3,6
+,Voucher3,2,3
+,Voucher4,2,3
+,WhiteFence,1,2
+DerbyRewardSetBronze_41_expert,Axe,6,4
+,Saw,6,4
+,Shovel,3,4
+,Dynamite,3,4
+,Demolition Charge,3,4
+,Pickaxe,3,4
+,Plank,2,12
+,Nail,2,12
+,Bolt,2,12
+,Screw,2,12
+,Duct Tape,2,12
+,Wood Panel,2,12
+,Land Deed,2,9
+,Mallet,2,9
+,Marker Stake,2,9
+,Voucher3,2,9
+,Voucher4,2,9
+,RockingHorse,1,3
+,HorseTopiary,1,3
+DerbyRewardSetSilver_41_expert,Axe,7,4
+,Saw,7,4
+,Shovel,4,4
+,Dynamite,4,4
+,Demolition Charge,4,4
+,Pickaxe,4,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,7
+,Mallet,3,7
+,Marker Stake,3,7
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,3
+,HorseTopiary,1,3
+DerbyRewardSetGold_41_expert,Axe,8,4
+,Saw,8,4
+,Shovel,5,4
+,Dynamite,5,4
+,Demolition Charge,5,4
+,Pickaxe,5,4
+,Plank,3,8
+,Nail,3,8
+,Bolt,3,8
+,Screw,3,8
+,Duct Tape,3,8
+,Wood Panel,3,8
+,Land Deed,3,7
+,Mallet,3,7
+,Marker Stake,3,7
+,Voucher3,2,5
+,Voucher4,2,5
+,RockingHorse,1,3
+,HorseTopiary,1,3

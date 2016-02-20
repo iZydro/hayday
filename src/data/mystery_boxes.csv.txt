@@ -1,0 +1,38 @@
+Name,FileName,ExportName,UnlockLevel,ReputationUnlockLevel,GoodReward,GoodAmount,Probability,DiamondPrice,RandomNumberMax,TileWidth,TileHeight,OpenSound,LockedSound,Mode
+String,String,String,int,int,String,int,int,int,int,int,int,String,String,String
+Box1,sc/buildings_new.sc,mystery_box_01,1,,FreeDiamonds,5,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box2,sc/buildings_new.sc,mystery_box_01,6,,Demolition Charge,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box3,sc/buildings_new.sc,mystery_box_01,6,,Axe,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box4,sc/buildings_new.sc,mystery_box_01,6,,Saw,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box5,sc/buildings_new.sc,mystery_box_01,6,,Shovel,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box6,sc/buildings_new.sc,mystery_box_01,1,,Bolt,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box7,sc/buildings_new.sc,mystery_box_01,1,,Plank,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box8,sc/buildings_new.sc,mystery_box_01,1,,Duct Tape,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box9,sc/buildings_new.sc,mystery_box_01,1,,Nail,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box10,sc/buildings_new.sc,mystery_box_01,1,,Screw,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box11,sc/buildings_new.sc,mystery_box_01,1,,Wood Panel,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box12,sc/buildings_new.sc,mystery_box_01,1,,CashInGems,8,4,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box13,sc/buildings_new.sc,mystery_box_01,20,,Voucher,1,3,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box14,sc/buildings_new.sc,mystery_box_01,34,,Pickaxe,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+Box15,sc/buildings_new.sc,mystery_box_01,6,,Dynamite,1,1,3,16,2,2,TreasureBox,TreasureBoxLocked,home
+TownCrate1,sc/common.sc,mystery_crate_01,,3,FreeDiamonds,8,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate2,sc/common.sc,mystery_crate_01,,3,Demolition Charge,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate3,sc/common.sc,mystery_crate_01,,3,Dynamite,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate4,sc/common.sc,mystery_crate_01,,3,Axe,1,40,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate5,sc/common.sc,mystery_crate_01,,3,Saw,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate6,sc/common.sc,mystery_crate_01,,3,Shovel,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate7,sc/common.sc,mystery_crate_01,,3,Pickaxe,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate8,sc/common.sc,mystery_crate_01,,3,Bolt,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate9,sc/common.sc,mystery_crate_01,,3,Plank,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate10,sc/common.sc,mystery_crate_01,,3,Duct Tape,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate11,sc/common.sc,mystery_crate_01,,3,Nail,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate12,sc/common.sc,mystery_crate_01,,3,Screw,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate13,sc/common.sc,mystery_crate_01,,3,Wood Panel,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate14,sc/common.sc,mystery_crate_01,,3,Voucher,1,10,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate15,sc/common.sc,mystery_crate_01,,3,Hammer,1,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate16,sc/common.sc,mystery_crate_01,,3,Hand Drill,1,1,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate17,sc/common.sc,mystery_crate_01,,3,Paint Bucket,1,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate18,sc/common.sc,mystery_crate_01,,3,Stone Block,1,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate19,sc/common.sc,mystery_crate_01,,3,Brick,1,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate20,sc/common.sc,mystery_crate_01,,3,Tar Bucket,1,2,5,16,2,2,TreasureBox,TreasureBoxLocked,train
+TownCrate21,sc/common.sc,mystery_crate_01,,3,Map Piece,1,1,5,16,2,2,TreasureBox,TreasureBoxLocked,train
