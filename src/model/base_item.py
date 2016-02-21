@@ -32,7 +32,6 @@ class BaseItem:
                     building = self.items[item]["data"]["ProcessingBuilding"]
 
                 print("BaseItem found in: " + building)
-                data = self.items[item]["data"]
-                return data, item
-
+                #data = self.items[item]["data"]
+                return self.items[item], item
         return

@@ -49,12 +49,17 @@ class Main:
         self.auto_fill("fruits", "Fruits", self.fruits)
         self.auto_fill("honey_extractor_goods", "Fruits", self.fruits)
 
+        csv_data = Base()
+        csv_data.read("animal_goods")
+
         # Create milk, eggs, etc from animals
         self.animal_products = BaseItem()
         for animal in self.animals.items:
             good = self.animals.items[animal]["data"]["Good"]
             print(good)
-            self.animal_products.add(good, "AnimalProducts", {"ProcessingBuilding": animal})
+            data = csv_data.items[good]
+            data["ProcessingBuilding"] = animal
+            self.animal_products.add(good, "AnimalProducts", data)
             self.items.add(good, "AnimalProducts")
 
         self.fields = BaseItem()
@@ -106,7 +111,8 @@ if __name__ == "__main__":
     main.base = Base()
 
     print("=================================================================================")
-    product = "Caramel Apple"
-    main.base.recursive_search(main.items.search(product, main.generators), main.generators, main.items)
+    product = "Chicken Food"
+    req, item = main.items.search(product, main.generators)
+    main.base.recursive_search(req, main.generators, main.items)
 
-#    main.items.show()
+    #main.processing_buildings.show()

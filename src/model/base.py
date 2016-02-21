@@ -6,7 +6,7 @@ import json
 
 class Base:
 
-    valid_items = {"UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good"}
+    valid_items = {"UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good", "Feed"}
 
     generators = None
 
@@ -83,7 +83,7 @@ class Base:
 
         print("================Recursively searching onto these requirements : " + str(product))
 
-        for required in product["Requirements"]:
+        for required in product["data"]["Requirements"]:
             print(required + " is required")
 
             required_data = items.search(required, generators)
