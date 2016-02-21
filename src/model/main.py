@@ -1,10 +1,6 @@
-#from model.base import *
-from model.fish import *
+from model.base import *
+from model.base_item import *
 from model.item import *
-from model.fruit_trees import *
-from model.animals import *
-from model.fruit import *
-from model.field import *
 
 
 class Main:
@@ -12,6 +8,7 @@ class Main:
     items = None
     fishes = None
     animals = None
+    animal_products = None
     fruit_trees = None
     gatherer_habitats = None
     fruits = None
@@ -22,79 +19,74 @@ class Main:
 
     generators = None
 
-    def autofill(self, filename, string_id, array_to_add):
+    def auto_fill(self, filename, string_id, array_to_add):
 
         csv_data = Base()
         csv_data.read(filename)
         for element in csv_data.items:
             array_to_add.add(element, string_id, csv_data.items[element])
-            self.items.add(element, string_id)
+            self.items.add(element, string_id, csv_data.items[element])
 
     def init_data(self):
 
         self.items = Item() # List of all items
 
-        self.fishes = Fish()
-        self.autofill("fishing_goods", "Fishing", self.fishes)
+        self.fishes = BaseItem()
+        self.auto_fill("fishing_goods", "Fishing", self.fishes)
 
-        self.fruit_trees = FruitTree()
-        self.autofill("fruit_trees", "Trees", self.fruit_trees)
-        self.autofill("gatherer_nest_goods", "Trees", self.fruit_trees)
+        self.fruit_trees = BaseItem()
+        self.auto_fill("fruit_trees", "Trees", self.fruit_trees)
+        self.auto_fill("gatherer_nest_goods", "Trees", self.fruit_trees)
 
-        self.animals = Animal()
-        self.autofill("animals", "Animals", self.animals)
+        self.animals = BaseItem()
+        self.auto_fill("animals", "Animals", self.animals)
 
-        self.fruits = Fruit()
-        self.autofill("fruits", "Fruits", self.fruits)
-        self.autofill("honey_extractor_goods", "Fruits", self.fruits)
+        self.fruits = BaseItem()
+        self.auto_fill("fruits", "Fruits", self.fruits)
+        self.auto_fill("honey_extractor_goods", "Fruits", self.fruits)
 
         # Create milk, eggs, etc from animals
+        self.animal_products = BaseItem()
         for animal in self.animals.items:
             good = self.animals.items[animal]["data"]["Good"]
             print(good)
-            self.fruits.add(good, "Fruits", {"ProcessingBuilding": animal})
-            self.items.add(good, "Fruits")
+            self.animal_products.add(good, "AnimalProducts", {"ProcessingBuilding": animal})
+            self.items.add(good, "AnimalProducts")
 
-#        self.autofill("animal_goods", "Fruits", self.fruits)
+        self.fields = BaseItem()
+        self.auto_fill("fields", "Vegetables", self.fields)
 
-        self.fields = Field()
-        self.autofill("fields", "Vegetables", self.fields)
-
-        print("caca")
+        # csv_data is a placeholder here, we will use to sequentially read all mills
         csv_data = Base()
         csv_data.read("processing_buildings")
 
-        self.processing_buildings = ProcessingBuilding()
-
+        self.processing_buildings = BaseItem()
         for element in csv_data.items:
 
-            if element == "Cafe_Kiosk":
-                element = "cafe"
-
-            if element == "Hammermill":
-                element = "animal_feed"
-
             mill_name = element.lower()
+            if mill_name == "cafe_kiosk":
+                mill_name = "cafe"
+
+            if mill_name == "hammermill":
+                mill_name = "animal_feed"
+
             if mill_name != "animal_feed":
                 mill_name += "_goods"
 
             building_csv = Base()
             building_csv.read(mill_name)
 
-            self.processing_buildings.add(mill_name, building_csv)
+            self.auto_fill(mill_name, "Mills", self.processing_buildings)
 
-            # Now add to items
-
-            for item in building_csv.items:
-                self.items.add(item, mill_name)
-
-        self.generators = {}
-        self.generators["ProcessingBuildings"] = self.processing_buildings
-        self.generators["Fishing"] = self.fishes
-        self.generators["Trees"] = self.fruit_trees
-        self.generators["Fruits"] = self.fruits
-        self.generators["Animals"] = self.animals
-        self.generators["Vegetables"] = self.fields
+        self.generators = {
+            "Mills": self.processing_buildings,
+            "Fishing": self.fishes,
+            "Trees": self.fruit_trees,
+            "Fruits": self.fruits,
+            "Animals": self.animals,
+            "AnimalProducts": self.animal_products,
+            "Vegetables": self.fields,
+        }
 
         self.fishes.show()
         print()
@@ -104,11 +96,14 @@ class Main:
         print()
         self.animals.show()
         print()
+        self.animal_products.show()
+        print()
         self.fields.show()
-
-        #self.base = Base()
+        print()
+        self.processing_buildings.show()
 
         return
+
 
 if __name__ == "__main__":
 
@@ -118,7 +113,7 @@ if __name__ == "__main__":
     main.base = Base()
 
     print("=================================================================================")
-    product = "Bread"
+    product = "Shepherds Pie"
     main.base.recursive_search(main.items.search(product, main.generators), main.generators, main.items)
 
-    #main.items.show()
+    main.items.show()

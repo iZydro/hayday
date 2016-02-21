@@ -1,10 +1,6 @@
 from model import *
-from model.processing_building import *
+#from model.processing_building import *
 from model.item import *
-from model.fish import *
-from model.fruit import *
-from model.fruit_trees import *
-from model.field import *
 import json
 
 
@@ -91,12 +87,12 @@ class Base:
             print(required + " is required")
 
             required_data = items.search(required, generators)
-            print("required data: " + str(required_data))
+            print("Required data: " + str(required_data))
             if required_data and "Requirements" in required_data:
                 self.recursive_search(required_data, generators, items)
             else:
                 if required_data and "ProcessingBuilding" in required_data:
                     print("*************Found primary: " + required + " from " + required_data["ProcessingBuilding"])
                 else:
-                    print("*************Found primary: " + required)
+                    print("*************Found primary: " + required + " - data: " + str(required_data))
 
