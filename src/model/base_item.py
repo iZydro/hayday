@@ -33,6 +33,6 @@ class BaseItem:
 
                 print("BaseItem found in: " + building)
                 data = self.items[item]["data"]
-                return data
+                return data, item
 
         return

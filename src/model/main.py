@@ -19,6 +19,8 @@ class Main:
 
     generators = None
 
+    base = None
+
     def auto_fill(self, filename, string_id, array_to_add):
 
         csv_data = Base()
@@ -28,6 +30,8 @@ class Main:
             self.items.add(element, string_id, csv_data.items[element])
 
     def init_data(self):
+
+        self.base = Base()
 
         self.items = Item() # List of all items
 
@@ -88,19 +92,8 @@ class Main:
             "Vegetables": self.fields,
         }
 
-        self.fishes.show()
-        print()
-        self.fruits.show()
-        print()
-        self.fruit_trees.show()
-        print()
-        self.animals.show()
-        print()
-        self.animal_products.show()
-        print()
-        self.fields.show()
-        print()
-        self.processing_buildings.show()
+        for generator in self.generators:
+            self.generators[generator].show()
 
         return
 
@@ -113,7 +106,7 @@ if __name__ == "__main__":
     main.base = Base()
 
     print("=================================================================================")
-    product = "Shepherds Pie"
+    product = "Caramel Apple"
     main.base.recursive_search(main.items.search(product, main.generators), main.generators, main.items)
 
-    main.items.show()
+#    main.items.show()
