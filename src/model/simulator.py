@@ -32,6 +32,9 @@ class Simulator:
         #print("Food for animal: " + food_needed)
 
         food_found = self.storage.get_one(food_needed)
+
+        if not food_found:
+            return None
         #print("Food found: " + food_found)
 
         self.storage.delete(food_found)
@@ -75,6 +78,8 @@ class Simulator:
         exp = self.manager.harvest(simulator)
         self.experience += exp
         self.plant_feed_animal(time)
+        exp = self.manager.harvest(simulator)
+        self.experience += exp
         self.manager.show(time)
         self.storage.list()
         print("Experience: " + str(self.experience))
@@ -90,10 +95,28 @@ class Simulator:
                 crop_cnt = 0
             free = simulator.manager.get_free("Vegetables")
 
-        free = simulator.manager.get_free("Hammermill")
-        while free:
-            free.plant("Chicken Food", time)
-            free = simulator.manager.get_free("Hammermill")
+        crops = [ "Chicken Food", "Cow Food" ]
+        crop_cnt = 0
+        frees = simulator.manager.get_frees("Hammermill")
+        for slot in frees:
+            # NOT PLANT, CRAFT!!!
+            slot.plant(crops[crop_cnt], time)
+            crop_cnt += 1
+            if crop_cnt >= len(crops):
+                crop_cnt = 0
+
+#        free = simulator.manager.get_free("Hammermill")
+#        while free:
+#            free.plant("Cow Food", time)
+#            free = simulator.manager.get_free("Hammermill")
+
+        free = simulator.manager.get_free("Cow")
+        if free:
+            simulator.feed_animal("Cow", time)
+
+        free = simulator.manager.get_free("Chicken")
+        if free:
+            simulator.feed_animal("Chicken", time)
 
 if __name__ == "__main__":
 
@@ -116,6 +139,7 @@ if __name__ == "__main__":
     simulator.storage.add("Chicken Food")
     simulator.storage.add("Cow Food")
 
+    simulator.manager.add("Hammermill")
     simulator.manager.add("Hammermill")
     simulator.manager.add("Bakery")
 
@@ -166,9 +190,21 @@ if __name__ == "__main__":
     time += 1000*50*60
     simulator.update_harvest_show_list(time)
 
-    time += 1000*5*60
+    time += 1000*62*60
     simulator.update_harvest_show_list(time)
-    time += 1000*5*60
+    time += 1000*62*60
     simulator.update_harvest_show_list(time)
-    time += 1000*5*60
+    time += 1000*62*60
     simulator.update_harvest_show_list(time)
+    time += 1000*62*60
+    simulator.update_harvest_show_list(time)
+    time += 1000*62*60
+    simulator.update_harvest_show_list(time)
+    time += 1000*62*60
+    simulator.update_harvest_show_list(time)
+    time += 1000*62*60
+    simulator.update_harvest_show_list(time)
+
+    for iterations in range(1, 100):
+        time += 1000*12*60
+        simulator.update_harvest_show_list(time)

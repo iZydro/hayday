@@ -19,8 +19,6 @@ class Main:
 
     generators = None
 
-    base = None
-
     def auto_fill(self, filename, string_id, array_to_add):
 
         csv_data = Base()
