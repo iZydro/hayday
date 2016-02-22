@@ -53,13 +53,18 @@ class FieldManager:
     def harvest(self, simulator):
         print("========== Harvesting =============")
         result = []
+        experience = 0
         for item in self.items:
             harvested = item.harvest()
             if harvested:
                 result.append(harvested)
                 simulator.storage.add(harvested)
+                crop_data, crop_name = self.database.items.search(harvested, self.database.generators)
+                if "ExpCollect" in crop_data["data"]:
+                    experience += int(crop_data["data"]["ExpCollect"])
         print("Harvested: " + str(result))
         print("===================================")
+        return experience
 
 
 class Field:

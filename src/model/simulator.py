@@ -72,10 +72,12 @@ class Simulator:
 
     def update_harvest_show_list(self, time):
         self.manager.update(time)
-        self.manager.harvest(simulator)
+        exp = self.manager.harvest(simulator)
+        self.experience += exp
         self.plant_feed_animal(time)
         self.manager.show(time)
         self.storage.list()
+        print("Experience: " + str(self.experience))
 
     def plant_feed_animal(self, time):
         crops = [ "Wheat", "Corn" ]
