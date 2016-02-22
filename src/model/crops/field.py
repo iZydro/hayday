@@ -23,6 +23,14 @@ class FieldManager:
                 return item
         return None
 
+    def get_frees(self, id):
+        # Returns a list of all free slots of a given type
+        frees = []
+        for item in self.items:
+            if item.id == id and item.name == None:
+                frees.append(item)
+        return frees
+
     def add(self, id, data=None):
 
         if id == "Cow" or id == "Chicken":
@@ -60,7 +68,7 @@ class FieldManager:
                 result.append(harvested)
                 simulator.storage.add(harvested)
                 crop_data, crop_name = self.database.items.search(harvested, self.database.generators)
-                if "ExpCollect" in crop_data["data"]:
+                if "ExpCollect" in crop_data["data"] or True:
                     experience += int(crop_data["data"]["ExpCollect"])
         print("Harvested: " + str(result))
         print("===================================")
@@ -95,16 +103,22 @@ class Field:
 
         crop_data, crop_name = self.parent.database.items.search(crop_name_ref, self.parent.database.generators)
 
-        #print(crop_data, crop_name)
+        requirements = []
+
         if crop_data["Mill"] == self.id:
-            #print("Valid")
-            pass
+            requirements.append(crop_name_ref)
         else:
             if crop_data["data"]["ProcessingBuilding"] == self.id:
-                #print("Valid")
-                pass
-            else:
-                return
+                # If it is a Mill, check requirements
+                requirements = []
+                if "Requirements" in crop_data["data"]:
+                    for req in crop_data["data"]["Requirements"]:
+                        for num in range(int(crop_data["data"]["Requirements"][req])):
+                            requirements.append(req)
+                else:
+                    requirements.append("caca")
+
+        print(crop_data, crop_name, requirements)
 
         self.name = crop_name
         self.data = crop_data["data"]
@@ -155,6 +169,6 @@ class Field:
 
     def update(self, timestamp):
         if self.name:
-            if timestamp - self.ts > int(self.data["TimeMin"])*60*1000:
+            if timestamp - self.ts >= int(self.data["TimeMin"])*60*1000:
                 self.status = "Ready"
 
