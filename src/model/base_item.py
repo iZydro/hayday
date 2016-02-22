@@ -22,7 +22,7 @@ class BaseItem:
 
     def search(self, search_item):
 
-        print("Searching base_item: " + search_item)
+        #print("Searching base_item: " + search_item)
         for item in self.items:
             if item == search_item:
                 building = self.items[item]["Mill"]
@@ -31,7 +31,7 @@ class BaseItem:
                 if "ProcessingBuilding" in self.items[item]["data"]:
                     building = self.items[item]["data"]["ProcessingBuilding"]
 
-                print("BaseItem found in: " + building)
+                #print("BaseItem found in: " + building)
                 #data = self.items[item]["data"]
                 return self.items[item], item
-        return
+        return None, None

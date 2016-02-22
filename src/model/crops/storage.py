@@ -19,13 +19,13 @@ class Storage:
     def find(self, item_ref, num=1):
         found = 0
         for item in self.items:
-            print("Searching:" + item + "(" + str(num) + ")")
+            #print("Searching:" + item + "(" + str(num) + ")")
             if item == item_ref:
                 found = found + 1
-                print("Found " + str(found))
-                print("comp: " + str(found) + str(num))
+                #print("Found " + str(found))
+                #print("comp: " + str(found) + str(num))
                 if found == num:
-                    print("Found all!")
+                    #print("Found all!")
                     return True
         return None
 
@@ -38,7 +38,12 @@ class Storage:
 
     def list(self):
         print("====== Storage =======")
+        list_items = {}
         for item in self.items:
-            print(item)
+            if item not in list_items:
+                list_items[item] = 0
+            list_items[item] += 1
+        for print_item in list_items:
+            print(print_item + " (" + str(list_items[print_item]) + ")")
         print("======================")
 

@@ -4,11 +4,11 @@ from model.main import *
 class FieldManager:
 
     items = None
-    main = None
+    database = None
 
-    def __init__(self, main_ref: Main):
+    def __init__(self, database_ref: Main):
         self.items = []
-        self.main = main_ref
+        self.database = database_ref
         pass
 
     def nice_number(self, time_left):
@@ -24,6 +24,11 @@ class FieldManager:
         return None
 
     def add(self, id, data=None):
+
+        if id == "Cow" or id == "Chicken":
+            data, name = self.database.items.search(id, self.database.generators)
+            print(data)
+
         _item = Field(self, id, data)
         self.items.append(_item)
         return _item
@@ -77,17 +82,22 @@ class Field:
 
     def find(self, crop_name):
 
-        self.parent.main.items.search(crop_name)
+        self.parent.database.items.search(crop_name)
 
         pass
 
-    def plant(self, crop_name, crop_data, timestamp):
-        print(crop_data)
+    def plant(self, crop_name_ref, timestamp):
+
+        crop_data, crop_name = self.parent.database.items.search(crop_name_ref, self.parent.database.generators)
+
+        #print(crop_data, crop_name)
         if crop_data["Mill"] == self.id:
-            print("Valid")
+            #print("Valid")
+            pass
         else:
             if crop_data["data"]["ProcessingBuilding"] == self.id:
-                print("Valid")
+                #print("Valid")
+                pass
             else:
                 return
 
@@ -98,13 +108,13 @@ class Field:
         pass
 
     def food_needed(self):
-        print(self.animal_data["data"])
+        #print(self.animal_data["data"])
         if "Feed" in self.animal_data["data"]:
             return self.animal_data["data"]["Feed"]
         return None
 
     def good_created(self):
-        print(self.animal_data["data"])
+        #print(self.animal_data["data"])
         if "Good" in self.animal_data["data"]:
             return self.animal_data["data"]["Good"]
         return None
@@ -116,10 +126,10 @@ class Field:
             self.data = None
             self.ts = None
             self.status = "Empty"
-            print("Harvested: " + name)
+            #print("Harvested: " + name)
             return name
         else:
-            print("Cannot harvest " + str(name))
+            #print("Cannot harvest " + str(name))
             return None
 
     def time_left(self, timestamp):

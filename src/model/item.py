@@ -27,13 +27,14 @@ class Item:
         primary_buildings = {
             "Fishing", "Vegetables", "Trees", "Animals", "AnimalProducts", "Fruits", "Mills"
         }
-        print("Searching: " + str(search_item))
+
+        #print("Searching: " + str(search_item))
         for item in self.items:
             if item == search_item:
 
                 # Get the building where the item is created
                 building = self.items[item]["Mill"]
-                print("Found in building: " + building)
+                #print("Found in building: " + building)
 
                 if building in primary_buildings:
                     return generators[building].search(item)
@@ -41,4 +42,4 @@ class Item:
                     caca
                     return generators["ProcessingBuildings"].search(item)
 
-        return
+        return None

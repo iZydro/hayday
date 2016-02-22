@@ -6,7 +6,7 @@ import json
 
 class Base:
 
-    valid_items = {"UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good", "Feed"}
+    valid_items = {"UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good", "Feed", "ExpCollect"}
 
     generators = None
 
