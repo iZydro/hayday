@@ -28,6 +28,10 @@ class FieldManager:
         self.items.append(_item)
         return _item
 
+    def find(self, name):
+        for item in self.items:
+            if item.id == name:
+                return item
         pass
 
     def update(self, time):
@@ -36,10 +40,21 @@ class FieldManager:
             item.update(time)
 
     def show(self, timestamp):
-        print("=======================")
-        print("Showing: " + self.nice_number(timestamp))
+        print("==========Showing: " + self.nice_number(timestamp) + "=============")
         for item in self.items:
             item.show(timestamp)
+        print("=====================================")
+
+    def harvest(self, simulator):
+        print("========== Harvesting =============")
+        result = []
+        for item in self.items:
+            harvested = item.harvest()
+            if harvested:
+                result.append(harvested)
+                simulator.storage.add(harvested)
+        print("Harvested: " + str(result))
+        print("===================================")
 
 
 class Field:
@@ -88,6 +103,12 @@ class Field:
             return self.animal_data["data"]["Feed"]
         return None
 
+    def good_created(self):
+        print(self.animal_data["data"])
+        if "Good" in self.animal_data["data"]:
+            return self.animal_data["data"]["Good"]
+        return None
+
     def harvest(self):
         name = self.name
         if self.status == "Ready":
@@ -107,7 +128,7 @@ class Field:
         if not self.name:
             return None
 
-        if self.id == "Field" or self.id == "Cow":
+        if self.id == "Field" or self.id == "Cow" or True:
             time_left = int(self.data["TimeMin"])*60*1000 - (timestamp - self.ts)
             if time_left <= 0:
                 return "Ready"
@@ -115,7 +136,7 @@ class Field:
                 return self.parent.nice_number(time_left)
 
     def show(self, timestamp=None):
-        print(self.id, self.name, self.data, self.status, self.time_left(timestamp))
+        print(self.id, "creating", self.name, "with data", self.data, "Status:", self.status, "Time Left:", self.time_left(timestamp))
 
     def update(self, timestamp):
         if self.name:

@@ -111,7 +111,7 @@ if __name__ == "__main__":
     main.base = Base()
 
     print("=================================================================================")
-    product = "Chicken Food"
+    product = "Lemon Pie"
     req, item = main.items.search(product, main.generators)
     main.base.recursive_search(req, main.generators, main.items)
 
