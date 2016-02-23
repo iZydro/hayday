@@ -131,9 +131,13 @@ if __name__ == "__main__":
     time = 0
 
     simulator.storage.add("Corn")
+    simulator.storage.add("Corn")
+    simulator.storage.add("Corn")
     simulator.storage.add("Wheat")
     simulator.storage.add("Wheat")
     simulator.storage.add("Wheat")
+    simulator.storage.add("Soybean")
+    simulator.storage.add("Soybean")
     simulator.storage.add("Soybean")
 
     simulator.storage.add("Chicken Food")

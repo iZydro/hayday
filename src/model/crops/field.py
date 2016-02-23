@@ -100,7 +100,7 @@ class Field:
 
     def find(self, crop_name):
 
-        self.parent.database.items.search(crop_name)
+        self.parent.database.items.search(crop_name, self.parent.database.generators)
 
         pass
 
@@ -131,16 +131,15 @@ class Field:
             do_it = True
 
         if len(requirements):
-            if self.parent.storage.find(requirements[0]):
-                do_it = True
-                self.parent.storage.delete(requirements[0])
-
-            else:
-                do_it = False
+            for req in requirements:
+                if not self.parent.storage.find(req):
+                    do_it = False
 
         if do_it:
+            if len(requirements):
+                for req in requirements:
+                    self.parent.storage.delete(req)
 
-            #self.parent.storage.delete(requirements[0])
             self.name = crop_name
             self.data = crop_data["data"]
             self.ts = int(timestamp)
