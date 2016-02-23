@@ -10,6 +10,8 @@ class Simulator:
     manager = None
     experience = None
 
+    food_cnt = None
+
     def __init__(self):
         self.database = Main()
         self.database.init_data()
@@ -85,6 +87,7 @@ class Simulator:
         print("Experience: " + str(self.experience))
 
     def plant_feed_animal(self, time):
+
         crops = [ "Wheat", "Corn", "Soybean" ]
         crop_cnt = 0
         frees = simulator.manager.get_frees("Vegetables")
@@ -95,14 +98,14 @@ class Simulator:
                 crop_cnt = 0
 
         crops = [ "Chicken Food", "Cow Food" ]
-        crop_cnt = 0
+        #crop_cnt = 0
         frees = simulator.manager.get_frees("Hammermill")
         for slot in frees:
             # NOT PLANT, CRAFT!!!
-            slot.plant(crops[crop_cnt], time)
-            crop_cnt += 1
-            if crop_cnt >= len(crops):
-                crop_cnt = 0
+            slot.plant(crops[self.food_cnt], time)
+            self.food_cnt += 1
+            if self.food_cnt >= len(crops):
+                self.food_cnt = 0
 
 #        free = simulator.manager.get_free("Hammermill")
 #        while free:
@@ -125,6 +128,8 @@ if __name__ == "__main__":
 
     simulator.storage = Storage(database)
     simulator.manager = FieldManager(database, simulator.storage)
+
+    simulator.food_cnt = 0
 
     print("Fielding")
 
@@ -162,6 +167,12 @@ if __name__ == "__main__":
 
     simulator.manager.add("Cow")
     simulator.manager.add("Chicken")
+
+    for iterations in range(1, 200):
+        time += 1000*4*60
+        simulator.update_harvest_show_list(time)
+
+    exit(1)
 
     simulator.create_product("Chicken Food", time)
     simulator.manager.show(time)

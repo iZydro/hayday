@@ -124,16 +124,24 @@ class Field:
                     #requirements.append("caca")
                     pass
 
-        do_it = False
+        do_it = True
         print(crop_data, crop_name, requirements)
         print(requirements)
-        if not len(requirements):
-            do_it = True
+        #if not len(requirements):
+        #    do_it = True
+
+        # Create a copy of the requirements to check if all are in the storage
+        requirements_copy = requirements.copy()
 
         if len(requirements):
-            for req in requirements:
-                if not self.parent.storage.find(req):
-                    do_it = False
+            for item in self.parent.storage.items:
+                for req in requirements_copy:
+                    if item == req:
+                        requirements_copy.remove(req)
+                        break
+        if len(requirements_copy) != 0:
+            # Could not find all requirements
+            do_it = False
 
         if do_it:
             if len(requirements):
