@@ -10,7 +10,8 @@ class Simulator:
     manager = None
     experience = None
 
-    food_cnt = None
+    crops_cnt = None
+
 
     def __init__(self):
         self.database = Main()
@@ -79,38 +80,31 @@ class Simulator:
         self.manager.update(time)
         exp = self.manager.harvest(simulator)
         self.experience += exp
-        self.plant_feed_animal(time)
+        self.plant_feed_animal(simulator, time)
         exp = self.manager.harvest(simulator)
         self.experience += exp
         self.manager.show(time)
         self.storage.list()
         print("Experience: " + str(self.experience))
 
-    def plant_feed_animal(self, time):
+    def rolling_plant(self, slot, crops, simulator):
 
-        crops = [ "Wheat", "Corn", "Soybean" ]
-        crop_cnt = 0
-        frees = simulator.manager.get_frees("Vegetables")
+        # Create sequence pointer for this slot if it does not exist
+        if slot not in simulator.crops_cnt:
+            simulator.crops_cnt[slot] = 0
+
+        frees = simulator.manager.get_frees(slot)
         for free in frees:
-            free.plant(crops[crop_cnt], time)
-            crop_cnt += 1
-            if crop_cnt >= len(crops):
-                crop_cnt = 0
+            if free.plant(crops[simulator.crops_cnt[slot]], time):
+                simulator.crops_cnt[slot] += 1
+                if simulator.crops_cnt[slot] >= len(crops):
+                    simulator.crops_cnt[slot] = 0
 
-        crops = [ "Chicken Food", "Cow Food" ]
-        #crop_cnt = 0
-        frees = simulator.manager.get_frees("Hammermill")
-        for slot in frees:
-            # NOT PLANT, CRAFT!!!
-            slot.plant(crops[self.food_cnt], time)
-            self.food_cnt += 1
-            if self.food_cnt >= len(crops):
-                self.food_cnt = 0
+    def plant_feed_animal(self, simulator, time):
 
-#        free = simulator.manager.get_free("Hammermill")
-#        while free:
-#            free.plant("Cow Food", time)
-#            free = simulator.manager.get_free("Hammermill")
+        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean"], simulator)
+        self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
+        self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
 
         free = simulator.manager.get_free("Cow")
         if free:
@@ -120,6 +114,7 @@ class Simulator:
         if free:
             simulator.feed_animal("Chicken", time)
 
+
 if __name__ == "__main__":
 
     simulator = Simulator()
@@ -128,8 +123,7 @@ if __name__ == "__main__":
 
     simulator.storage = Storage(database)
     simulator.manager = FieldManager(database, simulator.storage)
-
-    simulator.food_cnt = 0
+    simulator.crops_cnt = {}
 
     print("Fielding")
 
@@ -168,9 +162,12 @@ if __name__ == "__main__":
     simulator.manager.add("Cow")
     simulator.manager.add("Chicken")
 
-    for iterations in range(1, 200):
+    for iterations in range(1, 100):
         time += 1000*4*60
         simulator.update_harvest_show_list(time)
+
+    for item in database.items.items:
+        print(database.items.items[item])
 
     exit(1)
 
