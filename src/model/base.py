@@ -6,7 +6,8 @@ import json
 
 class Base:
 
-    valid_items = {"UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good", "Feed", "ExpCollect"}
+    valid_items = ["Name", "UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding", "Good", "Feed", "ExpCollect"]
+    level_items = ["Level", "ExpToNextLevel"]
 
     generators = None
 
@@ -14,7 +15,7 @@ class Base:
         self.generators = {}
         self.items = {}
 
-    def read(self, base_name):
+    def read(self, base_name, names=valid_items):
 
         name = base_name + ".csv.txt"
 
@@ -47,14 +48,14 @@ class Base:
             print(line)
 
             words = line.split(",")
-            id_product = words[fields["Name"]]
+            id_product = words[fields[names[0]]]
             if id_product != "":
                 # New item
-                self.items[words[fields["Name"]]] = {}
-                current_item = self.items[words[fields["Name"]]]
+                self.items[words[fields[names[0]]]] = {}
+                current_item = self.items[words[fields[names[0]]]]
 
                 for field in fields:
-                    if field in self.valid_items:
+                    if field in names:
                         if words[fields[field]] != "":
                             current_item[field] = words[fields[field]]
 

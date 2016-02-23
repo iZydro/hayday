@@ -85,7 +85,8 @@ class Simulator:
         self.experience += exp
         self.manager.show(time)
         self.storage.list()
-        print("Experience: " + str(self.experience))
+        self.level = self.database.get_level(self.experience)
+        print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
 
     def rolling_plant(self, slot, crops, simulator):
 
@@ -106,12 +107,12 @@ class Simulator:
         self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
         self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
 
-        free = simulator.manager.get_free("Cow")
-        if free:
+        frees = simulator.manager.get_frees("Cow")
+        for free in frees:
             simulator.feed_animal("Cow", time)
 
-        free = simulator.manager.get_free("Chicken")
-        if free:
+        frees = simulator.manager.get_frees("Chicken")
+        for free in frees:
             simulator.feed_animal("Chicken", time)
 
 
@@ -139,35 +140,29 @@ if __name__ == "__main__":
     simulator.storage.add("Soybean")
     simulator.storage.add("Soybean")
 
-    simulator.storage.add("Chicken Food")
-    simulator.storage.add("Cow Food")
+    #simulator.storage.add("Chicken Food")
+    #simulator.storage.add("Cow Food")
 
     simulator.manager.add("Hammermill")
     simulator.manager.add("Hammermill")
     simulator.manager.add("Bakery")
 
-    for counter in range(1, 10):
+    for counter in range(1, 32):
         simulator.manager.add("Vegetables")
 
-    simulator.manager.get_free("Vegetables").plant("Wheat", time)
-    simulator.manager.get_free("Vegetables").plant("Wheat", time)
-    simulator.manager.get_free("Vegetables").plant("Wheat", time)
-    simulator.manager.get_free("Vegetables").plant("Corn", time)
-    simulator.manager.get_free("Vegetables").plant("Corn", time)
-    simulator.manager.get_free("Vegetables").plant("Corn", time)
-    simulator.manager.get_free("Vegetables").plant("Soybean", time)
-    simulator.manager.get_free("Vegetables").plant("Soybean", time)
-    simulator.manager.get_free("Vegetables").plant("Soybean", time)
-
     simulator.manager.add("Cow")
+    simulator.manager.add("Cow")
+    simulator.manager.add("Cow")
+    simulator.manager.add("Chicken")
+    simulator.manager.add("Chicken")
     simulator.manager.add("Chicken")
 
     for iterations in range(1, 100):
-        time += 1000*4*60
+        time += 1000*10*60
         simulator.update_harvest_show_list(time)
 
-    for item in database.items.items:
-        print(database.items.items[item])
+    #for item in database.items.items:
+    #    print(database.items.items[item])
 
     exit(1)
 

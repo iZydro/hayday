@@ -15,6 +15,10 @@ class Main:
     fields = None
     base = None
 
+    level = None
+
+    levels = None
+
     processing_buildings = None
 
     generators = None
@@ -95,10 +99,23 @@ class Main:
             "Vegetables": self.fields,
         }
 
-        for generator in self.generators:
-            self.generators[generator].show()
+        #for generator in self.generators:
+        #    self.generators[generator].show()
+
+        csv_data = Base()
+        csv_data.read("exp_levels", csv_data.level_items)
+        # print(levels_csv_data.items)
+
+        from collections import OrderedDict
+        self.levels = OrderedDict(sorted(csv_data.items.items(), key=lambda t: int(t[0])))
 
         return
+
+    def get_level(self, experience):
+
+        for level in self.levels:
+            if experience < int(self.levels[level]["ExpToNextLevel"]):
+                return level
 
 
 if __name__ == "__main__":
