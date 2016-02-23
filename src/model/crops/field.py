@@ -1,14 +1,16 @@
 from model.main import *
-
+from model.crops.storage import *
 
 class FieldManager:
 
     items = None
     database = None
+    storage = None
 
-    def __init__(self, database_ref: Main):
+    def __init__(self, database_ref: Main, storage_ref: Storage):
         self.items = []
         self.database = database_ref
+        self.storage = storage_ref
         pass
 
     def nice_number(self, time_left):
@@ -67,7 +69,10 @@ class FieldManager:
             if harvested:
                 result.append(harvested)
                 simulator.storage.add(harvested)
+
                 crop_data, crop_name = self.database.items.search(harvested, self.database.generators)
+                if crop_data["Mill"] == "Vegetables":
+                    simulator.storage.add(harvested)
                 if "ExpCollect" in crop_data["data"] or True:
                     experience += int(crop_data["data"]["ExpCollect"])
         print("Harvested: " + str(result))
@@ -84,7 +89,7 @@ class Field:
     id = None
     status = "Empty"
 
-    def __init__(self, parent_ref, id_ref, animal_data_ref=None):
+    def __init__(self, parent_ref : FieldManager, id_ref, animal_data_ref=None):
         self.parent = parent_ref
         self.id = id_ref
         self.animal_data = animal_data_ref
@@ -116,15 +121,34 @@ class Field:
                         for num in range(int(crop_data["data"]["Requirements"][req])):
                             requirements.append(req)
                 else:
-                    requirements.append("caca")
+                    #requirements.append("caca")
+                    pass
 
+        do_it = False
         print(crop_data, crop_name, requirements)
+        print(requirements)
+        if not len(requirements):
+            do_it = True
 
-        self.name = crop_name
-        self.data = crop_data["data"]
-        self.ts = int(timestamp)
-        self.status = "Planted"
-        pass
+        if len(requirements):
+            if self.parent.storage.find(requirements[0]):
+                do_it = True
+                self.parent.storage.delete(requirements[0])
+
+            else:
+                do_it = False
+
+        if do_it:
+
+            #self.parent.storage.delete(requirements[0])
+            self.name = crop_name
+            self.data = crop_data["data"]
+            self.ts = int(timestamp)
+            self.status = "Planted"
+
+            return True
+
+        return False
 
     def food_needed(self):
         #print(self.animal_data["data"])

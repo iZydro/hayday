@@ -14,6 +14,7 @@ class Storage:
         self.items.append(item_ref)
 
     def delete(self, item_ref):
+        print("Deleting: " + item_ref )
         self.items.remove(item_ref)
 
     def find(self, item_ref, num=1):

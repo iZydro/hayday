@@ -85,15 +85,14 @@ class Simulator:
         print("Experience: " + str(self.experience))
 
     def plant_feed_animal(self, time):
-        crops = [ "Wheat", "Corn" ]
+        crops = [ "Wheat", "Corn", "Soybean" ]
         crop_cnt = 0
-        free = simulator.manager.get_free("Vegetables")
-        while free:
+        frees = simulator.manager.get_frees("Vegetables")
+        for free in frees:
             free.plant(crops[crop_cnt], time)
             crop_cnt += 1
             if crop_cnt >= len(crops):
                 crop_cnt = 0
-            free = simulator.manager.get_free("Vegetables")
 
         crops = [ "Chicken Food", "Cow Food" ]
         crop_cnt = 0
@@ -124,8 +123,8 @@ if __name__ == "__main__":
     database = Main()
     database.init_data()
 
-    simulator.manager = FieldManager(database)
     simulator.storage = Storage(database)
+    simulator.manager = FieldManager(database, simulator.storage)
 
     print("Fielding")
 
@@ -135,6 +134,7 @@ if __name__ == "__main__":
     simulator.storage.add("Wheat")
     simulator.storage.add("Wheat")
     simulator.storage.add("Wheat")
+    simulator.storage.add("Soybean")
 
     simulator.storage.add("Chicken Food")
     simulator.storage.add("Cow Food")
@@ -152,6 +152,9 @@ if __name__ == "__main__":
     simulator.manager.get_free("Vegetables").plant("Corn", time)
     simulator.manager.get_free("Vegetables").plant("Corn", time)
     simulator.manager.get_free("Vegetables").plant("Corn", time)
+    simulator.manager.get_free("Vegetables").plant("Soybean", time)
+    simulator.manager.get_free("Vegetables").plant("Soybean", time)
+    simulator.manager.get_free("Vegetables").plant("Soybean", time)
 
     simulator.manager.add("Cow")
     simulator.manager.add("Chicken")
