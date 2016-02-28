@@ -1,4 +1,4 @@
-from model.main import *
+from model.database import *
 
 
 class Storage:
@@ -6,7 +6,7 @@ class Storage:
     items = None
     main = None
 
-    def __init__(self, main_ref: Main):
+    def __init__(self, main_ref: Database):
         self.items = []
         self.main = main_ref
 
@@ -14,7 +14,7 @@ class Storage:
         self.items.append(item_ref)
 
     def delete(self, item_ref):
-        print("Deleting: " + item_ref )
+        #print("Deleting: " + item_ref )
         self.items.remove(item_ref)
 
     def find(self, item_ref, num=1):

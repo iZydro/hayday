@@ -1,13 +1,14 @@
-from model.main import *
+from model.database import *
 from model.crops.storage import *
 
-class FieldManager:
+
+class ItemsProcessorManager:
 
     items = None
     database = None
     storage = None
 
-    def __init__(self, database_ref: Main, storage_ref: Storage):
+    def __init__(self, database_ref: Database, storage_ref: Storage):
         self.items = []
         self.database = database_ref
         self.storage = storage_ref
@@ -39,7 +40,7 @@ class FieldManager:
             data, name = self.database.items.search(id, self.database.generators)
             print(data)
 
-        _item = Field(self, id, data)
+        _item = ItemsProcessor(self, id, data)
         self.items.append(_item)
         return _item
 
@@ -80,7 +81,7 @@ class FieldManager:
         return experience
 
 
-class Field:
+class ItemsProcessor:
 
     name = None
     data = None
@@ -89,7 +90,7 @@ class Field:
     id = None
     status = "Empty"
 
-    def __init__(self, parent_ref : FieldManager, id_ref, animal_data_ref=None):
+    def __init__(self, parent_ref : ItemsProcessorManager, id_ref, animal_data_ref=None):
         self.parent = parent_ref
         self.id = id_ref
         self.animal_data = animal_data_ref
@@ -125,10 +126,8 @@ class Field:
                     pass
 
         do_it = True
-        print(crop_data, crop_name, requirements)
-        print(requirements)
-        #if not len(requirements):
-        #    do_it = True
+        #print(crop_data, crop_name, requirements)
+        #print(requirements)
 
         # Create a copy of the requirements to check if all are in the storage
         requirements_copy = requirements.copy()

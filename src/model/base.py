@@ -19,7 +19,7 @@ class Base:
 
         name = base_name + ".csv.txt"
 
-        with open(folder + name, "r") as infile:
+        with open(globalNames.folder + name, "r") as infile:
             data = infile.read()
 
         data = data.replace('"', '')
@@ -68,7 +68,7 @@ class Base:
 
             current_line += 1
 
-        print(json.dumps(self.items, indent=4))
+        #print(json.dumps(self.items, indent=4))
 
     def _search(self, item):
 

@@ -1,5 +1,5 @@
-from model.main import *
-from model.crops.field import *
+from model.database import *
+from model.crops.itemsprocessor import *
 from model.crops.storage import *
 
 
@@ -14,7 +14,7 @@ class Simulator:
 
 
     def __init__(self):
-        self.database = Main()
+        self.database = Database()
         self.database.init_data()
         self.experience = 0
 
@@ -103,6 +103,11 @@ class Simulator:
 
     def plant_feed_animal(self, simulator, time):
 
+        #for item_name, item_data in simulator.database.items.iterate():
+        #    if int(item_data["unlock"]) <= simulator.level:
+        #        #print(item_name)
+        #        pass
+
         self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean"], simulator)
         self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
         self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
@@ -119,12 +124,49 @@ class Simulator:
 if __name__ == "__main__":
 
     simulator = Simulator()
-    database = Main()
+    database = Database()
     database.init_data()
 
     simulator.storage = Storage(database)
-    simulator.manager = FieldManager(database, simulator.storage)
+    simulator.manager = ItemsProcessorManager(database, simulator.storage)
     simulator.crops_cnt = {}
+
+    #database.fruits.show()
+    #database.fruit_trees.show()
+    #exit(1)
+
+    recipes = 0
+    mills = {}
+    for item_name, item_data in simulator.database.items.iterate():
+        if int(item_data["unlock"]) <= 10:
+
+            mill = item_data["Mill"]
+            if mill not in mills:
+                mills[mill] = {}
+            if "ProcessingBuilding" in item_data["data"]:
+                pb = item_data["data"]["ProcessingBuilding"]
+            else:
+                pb = "(primary)"
+            if pb not in mills[mill]:
+                mills[mill][pb] = 0
+            mills[mill][pb] += 1
+
+            simulator.database.items.show_one(item_name, item_data)
+            recipes += 1
+
+    print("Total recipes: " + str(recipes))
+    print("Mills:")
+    for mill in mills:
+        print(mill, len(mills[mill]))
+        items = ""
+        for item in mills[mill]:
+            items += " - " + item + "(" + str(mills[mill][item]) + ")"
+        print(items)
+
+    #req, item = database.items.search("Sweater", database.generators)
+    #print(item, req)
+
+    exit(1)
 
     print("Fielding")
 
