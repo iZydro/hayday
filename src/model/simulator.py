@@ -1,6 +1,7 @@
 from model.database import *
 from model.crops.itemsprocessor import *
 from model.crops.storage import *
+import json
 
 
 class Simulator:
@@ -120,6 +121,30 @@ class Simulator:
         for free in frees:
             simulator.feed_animal("Chicken", time)
 
+    def get_all_products(self, level):
+        recipes = 0
+        mills = {}
+        for item_name, item_data in simulator.database.items.iterate():
+            if int(item_data["unlock"]) <= level:
+
+                mill = item_data["Mill"]
+                if mill not in mills:
+                    mills[mill] = {}
+                if "ProcessingBuilding" in item_data["data"]:
+                    pb = item_data["data"]["ProcessingBuilding"]
+                else:
+                    pb = mill # "(primary)"
+                if pb not in mills[mill]:
+                    mills[mill][pb] = [] # 0
+                time = "0"
+                if "TimeMin" in item_data["data"]:
+                    time = item_data["data"]["TimeMin"]
+                mills[mill][pb].append({item_name: time}) # += 1
+
+                simulator.database.items.show_one(item_name, item_data)
+                recipes += 1
+
+        return mills, recipes
 
 if __name__ == "__main__":
 
@@ -135,32 +160,15 @@ if __name__ == "__main__":
     #database.fruit_trees.show()
     #exit(1)
 
-    recipes = 0
-    mills = {}
-    for item_name, item_data in simulator.database.items.iterate():
-        if int(item_data["unlock"]) <= 10:
+    mills, total_recipes = simulator.get_all_products(28)
+    print("Total recipes: " + str(total_recipes))
+    print(json.dumps(mills, indent=4))
 
-            mill = item_data["Mill"]
-            if mill not in mills:
-                mills[mill] = {}
-            if "ProcessingBuilding" in item_data["data"]:
-                pb = item_data["data"]["ProcessingBuilding"]
-            else:
-                pb = "(primary)"
-            if pb not in mills[mill]:
-                mills[mill][pb] = 0
-            mills[mill][pb] += 1
-
-            simulator.database.items.show_one(item_name, item_data)
-            recipes += 1
-
-    print("Total recipes: " + str(recipes))
-    print("Mills:")
     for mill in mills:
         print(mill, len(mills[mill]))
         items = ""
         for item in mills[mill]:
-            items += " - " + item + "(" + str(mills[mill][item]) + ")"
+            items += " - " + item + "(" + str(len(mills[mill][item])) + ")"
         print(items)
 
     #req, item = database.items.search("Sweater", database.generators)
