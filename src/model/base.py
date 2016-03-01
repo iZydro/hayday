@@ -24,7 +24,7 @@ class Base:
 
         data = data.replace('"', '')
 
-        print(data)
+        #print(data)
 
         lines = data.splitlines()
         num_lines = len(lines)
@@ -36,8 +36,8 @@ class Base:
             fields[header] = hcnt
             hcnt += 1
 
-        for field in fields:
-            print(field, fields[field])
+#        for field in fields:
+#            print(field, fields[field])
 
         current_line = 2 # Skip headers
 
@@ -45,7 +45,7 @@ class Base:
         while current_line < num_lines:
             line = lines[current_line]
 
-            print(line)
+            #print(line)
 
             words = line.split(",")
             id_product = words[fields[names[0]]]

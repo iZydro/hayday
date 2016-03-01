@@ -14,6 +14,9 @@ class Simulator:
     crops_cnt = None
 
 
+    list_of_unlocked_buildings = None
+
+
     def __init__(self):
         self.database = Database()
         self.database.init_data()
@@ -49,12 +52,12 @@ class Simulator:
 
     def create_product(self, product_ref, timestamp):
         product, product_name = database.items.search(product_ref, database.generators)
-        print(product_name, product)
+        #print(product_name, product)
 
         all_found = True
         for required in product["data"]["Requirements"]:
             num_required = int(product["data"]["Requirements"][required])
-            print("Requires: " + required + " (" + str(num_required) + ")")
+            #print("Requires: " + required + " (" + str(num_required) + ")")
             if self.storage.find(required, num_required):
                 # Found
                 pass
@@ -78,15 +81,29 @@ class Simulator:
             pb_ref.plant(product_name, timestamp)
 
     def update_harvest_show_list(self, time):
+
+        # First, add all new items to the manager
+
+        self.level = int(self.database.get_level(self.experience))
+        simulator.list_of_unlocked_buildings, total_recipes = simulator.get_all_products(self.level)
+
+        # Add new buildings if they do not exist
+        for pb in simulator.list_of_unlocked_buildings["CraftedProducts"]:
+            if simulator.manager.find(pb):
+                # Ya existe
+                pass
+            else:
+                #print("Adding: " + pb)
+                simulator.manager.add(pb)
+
         self.manager.update(time)
         exp = self.manager.harvest(simulator)
         self.experience += exp
         self.plant_feed_animal(simulator, time)
         exp = self.manager.harvest(simulator)
         self.experience += exp
-        self.manager.show(time)
+        #self.manager.show(time)
         self.storage.list()
-        self.level = self.database.get_level(self.experience)
         print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
 
     def rolling_plant(self, slot, crops, simulator):
@@ -97,7 +114,9 @@ class Simulator:
 
         frees = simulator.manager.get_frees(slot)
         for free in frees:
+            #print("Try plant", str(crops[simulator.crops_cnt[slot]]))
             if free.plant(crops[simulator.crops_cnt[slot]], time):
+                #print("Planted", str(crops[simulator.crops_cnt[slot]]))
                 simulator.crops_cnt[slot] += 1
                 if simulator.crops_cnt[slot] >= len(crops):
                     simulator.crops_cnt[slot] = 0
@@ -109,9 +128,20 @@ class Simulator:
         #        #print(item_name)
         #        pass
 
-        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean"], simulator)
-        self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
-        self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
+        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean", "Sugarcane", "Carrot"], simulator)
+
+        # Create crafted items in available mills
+
+        for pb in simulator.list_of_unlocked_buildings["CraftedProducts"]:
+            recipes = []
+            for recipe in simulator.list_of_unlocked_buildings["CraftedProducts"][pb]:
+                for key in recipe:
+                    recipes.append(key)
+            #print("Rolling plant", pb, recipes)
+            self.rolling_plant(pb, recipes, simulator)
+
+        #self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
+        #self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
 
         frees = simulator.manager.get_frees("Cow")
         for free in frees:
@@ -120,6 +150,11 @@ class Simulator:
         frees = simulator.manager.get_frees("Chicken")
         for free in frees:
             simulator.feed_animal("Chicken", time)
+
+        frees = simulator.manager.get_frees("Pig")
+        for free in frees:
+            #print(free.show())
+            simulator.feed_animal("Pig", time)
 
     def get_all_products(self, level):
         recipes = 0
@@ -141,7 +176,7 @@ class Simulator:
                     time = item_data["data"]["TimeMin"]
                 mills[mill][pb].append({item_name: time}) # += 1
 
-                simulator.database.items.show_one(item_name, item_data)
+                #simulator.database.items.show_one(item_name, item_data)
                 recipes += 1
 
         return mills, recipes
@@ -160,21 +195,20 @@ if __name__ == "__main__":
     #database.fruit_trees.show()
     #exit(1)
 
-    mills, total_recipes = simulator.get_all_products(28)
-    print("Total recipes: " + str(total_recipes))
-    print(json.dumps(mills, indent=4))
+#    mills, total_recipes = simulator.get_all_products(28)
+#    print("Total recipes: " + str(total_recipes))
+#    print(json.dumps(mills, indent=4))
 
-    for mill in mills:
-        print(mill, len(mills[mill]))
-        items = ""
-        for item in mills[mill]:
-            items += " - " + item + "(" + str(len(mills[mill][item])) + ")"
-        print(items)
+#    for mill in mills:
+#        print(mill, len(mills[mill]))
+#        items = ""
+#        for item in mills[mill]:
+#            items += " - " + item + "(" + str(len(mills[mill][item])) + ")"
+#        print(items)
 
     #req, item = database.items.search("Sweater", database.generators)
     #print(item, req)
 
-    exit(1)
 
     print("Fielding")
 
@@ -189,25 +223,36 @@ if __name__ == "__main__":
     simulator.storage.add("Soybean")
     simulator.storage.add("Soybean")
     simulator.storage.add("Soybean")
+    simulator.storage.add("Sugarcane")
+    simulator.storage.add("Sugarcane")
+    simulator.storage.add("Sugarcane")
+    simulator.storage.add("Carrot")
+    simulator.storage.add("Carrot")
+    simulator.storage.add("Carrot")
 
     #simulator.storage.add("Chicken Food")
     #simulator.storage.add("Cow Food")
 
     simulator.manager.add("Hammermill")
     simulator.manager.add("Hammermill")
-    simulator.manager.add("Bakery")
+    simulator.manager.add("Hammermill")
+    simulator.manager.add("Hammermill")
+    simulator.manager.add("Hammermill")
+    simulator.manager.add("Hammermill")
+
+    #simulator.manager.add("Bakery")
 
     for counter in range(1, 32):
         simulator.manager.add("Vegetables")
 
-    simulator.manager.add("Cow")
-    simulator.manager.add("Cow")
-    simulator.manager.add("Cow")
-    simulator.manager.add("Chicken")
-    simulator.manager.add("Chicken")
-    simulator.manager.add("Chicken")
+    for counter in range(1, 10):
+        simulator.manager.add("Cow", animal=True)
+    for counter in range(1, 15):
+        simulator.manager.add("Chicken", animal=True)
+    for counter in range(1, 10):
+        simulator.manager.add("Pig", animal=True)
 
-    for iterations in range(1, 100):
+    for iterations in range(1, 500):
         time += 1000*10*60
         simulator.update_harvest_show_list(time)
 

@@ -34,11 +34,11 @@ class ItemsProcessorManager:
                 frees.append(item)
         return frees
 
-    def add(self, id, data=None):
+    def add(self, id, data=None, animal=False):
 
-        if id == "Cow" or id == "Chicken":
+        if animal: # id == "Cow" or id == "Chicken" or id == "Pig":
             data, name = self.database.items.search(id, self.database.generators)
-            print(data)
+            #print(data)
 
         _item = ItemsProcessor(self, id, data)
         self.items.append(_item)
@@ -48,7 +48,7 @@ class ItemsProcessorManager:
         for item in self.items:
             if item.id == name:
                 return item
-        pass
+        return None
 
     def update(self, time):
         print("Update ts: " + self.nice_number(time))

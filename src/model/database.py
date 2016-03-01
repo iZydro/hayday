@@ -31,7 +31,7 @@ class Database:
             if element != "EmptyField":
                 array_to_add.add(element, string_id, csv_data.items[element])
                 self.items.add(element, string_id, csv_data.items[element])
-                print(element, string_id, csv_data.items[element])
+                #print(element, string_id, csv_data.items[element])
 
     def init_data(self):
 
