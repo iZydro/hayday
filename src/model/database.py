@@ -44,14 +44,16 @@ class Database:
 
         self.fruit_trees = BaseItem()
         self.auto_fill("fruit_trees", globalNames.trees, self.fruit_trees)
-        self.auto_fill("gatherer_nest_goods", globalNames.trees, self.fruit_trees)
+        self.auto_fill("gatherer_nests", globalNames.trees, self.fruit_trees)
+        #self.auto_fill("gatherer_nests", globalNames.trees, self.fruit_trees)
 
         self.animals = BaseItem()
         self.auto_fill("animals", globalNames.animals, self.animals)
 
         self.fruits = BaseItem()
         self.auto_fill("fruits", globalNames.fruits, self.fruits)
-        self.auto_fill("honey_extractor_goods", globalNames.fruits, self.fruits)
+        self.auto_fill("gatherer_nest_goods", globalNames.fruits, self.fruits)
+        #self.auto_fill("honey_extractor_goods", globalNames.fruits, self.fruits)
 
         csv_data = Base()
         csv_data.read("animal_goods")
@@ -107,6 +109,13 @@ class Database:
                 animal = item_data["data"]["Name"].split("Tree")[0]
                 animal_item, animal_name = self.fruits.search(animal)
                 item_data["unlock"] = animal_item["data"]["UnlockLevel"]
+            if "BeeHive" in item_data["data"]["Name"]:
+                animal = "Honeycomb"
+                animal_item, animal_name = self.fruits.search(animal)
+                item_data["unlock"] = animal_item["data"]["UnlockLevel"]
+                item_data["data"]["TimeMin"] = "60"
+            if "Honeycomb" in item_data["data"]["Name"]:
+                item_data["data"]["ProcessingBuilding"] = "BeeHive"
         #exit(1)
 
         self.generators = {

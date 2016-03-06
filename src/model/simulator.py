@@ -79,7 +79,7 @@ class Simulator:
             #print("pbref:" + str(pb_ref))
             pb_ref.plant(product_name, timestamp)
 
-    def update_harvest_show_list(self, time):
+    def update_harvest_show_list(self, time, verbose=True):
 
         # First, add all new items to the manager
 
@@ -95,15 +95,45 @@ class Simulator:
                 #print("Adding: " + pb)
                 self.manager.add(pb)
 
-        self.manager.update(time)
-        exp = self.manager.harvest(self)
+        self.manager.update(time, verbose)
+        exp = self.manager.harvest(self, verbose)
         self.experience += exp
+
+        # Try to plant and feed eveything!
         self.plant_feed_animal(self, time)
-        exp = self.manager.harvest(self)
+
+        #exp = self.manager.harvest(self, verbose)
         self.experience += exp
-        #self.manager.show(time)
-        self.storage.list()
-        print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
+        if verbose:
+            self.storage.list()
+            print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
+
+    def fill_crops(self, simulator, time):
+
+        # Create a list of unlocked crops
+        unlocked_crops = []
+        planted_crops = {}
+        for crop in self.database.fields.items:
+            crop_data, crop_name = self.database.items.search(crop, self.database.generators)
+            if int(crop_data["data"]["UnlockLevel"]) <= self.level:
+                unlocked_crops.append(crop_name)
+                planted_crops[crop_name] = 0
+
+        total_fields = self.manager.get_total("Vegetables")
+        crops_per_field = int(len(total_fields) / len(unlocked_crops))
+
+        # Check how many crops of each class are planted
+        for field in total_fields:
+            if field.name in unlocked_crops:
+                planted_crops[field.name] += 1
+
+        # Plant the fields until reaching the desired number of each crop
+        for crop_name in unlocked_crops:
+            crops_to_plant = crops_per_field - planted_crops[crop_name]
+            for crop in range(0, crops_to_plant):
+                free = self.manager.get_free("Vegetables")
+                free.plant(crop_name, simulator, time)
+
 
     def rolling_plant(self, slot, crops, simulator, time):
 
@@ -111,23 +141,68 @@ class Simulator:
         if slot not in self.crops_cnt:
             self.crops_cnt[slot] = 0
 
-        frees = self.manager.get_frees(slot)
-        for free in frees:
-            #print("Try plant", str(crops[simulator.crops_cnt[slot]]))
-            if free.plant(crops[self.crops_cnt[slot]], simulator, time):
-                #print("Planted", str(crops[simulator.crops_cnt[slot]]))
+        unlocked = False
+        unlock_level = 0
+        # Ensure that crops_cnt points to an unlocked recipe!
+        while not unlocked:
+            crop_name_ref = str(crops[simulator.crops_cnt[slot]])
+
+            for item_name, item_data in self.database.items.iterate():
+    #            print(item_name, item_data["Mill"], item_data["data"])
+                if item_data["data"]["Name"] == crop_name_ref:
+                    unlock_level = int(item_data["unlock"])
+            if unlock_level <= int(self.level):
+                unlocked = True
+            else:
                 self.crops_cnt[slot] += 1
                 if self.crops_cnt[slot] >= len(crops):
                     self.crops_cnt[slot] = 0
 
+        frees = self.manager.get_frees(slot)
+        for free in frees:
+            if free.plant(crops[self.crops_cnt[slot]], simulator, time):
+                self.crops_cnt[slot] += 1
+                if self.crops_cnt[slot] >= len(crops):
+                    self.crops_cnt[slot] = 0
+            else:
+                #print("Could not plant:", crops[self.crops_cnt[slot]])
+                pass
+
     def plant_feed_animal(self, simulator, time):
+
+        # Check if we run out of crops and add one for free if needed
+        for crop in self.database.fields.items:
+            found = False
+            if self.storage.find(crop):
+                found = True
+            veggies = self.manager.get_total("Vegetables")
+            for veggie in veggies:
+                if veggie.name == "crop":
+                    found = True
+                    break
+
+            if not found:
+                self.storage.add(crop)
+
+        # Add fish for free...
+        self.storage.add("Fish Meat")
+        self.storage.add("Lobster Meat")
+        self.storage.add("Duck Down")
+
+        self.storage.add("SilverOre")
+        self.storage.add("GoldOre")
+        self.storage.add("PlatinumOre")
+        self.storage.add("CoalOre")
+        self.storage.add("IronOre")
 
         #for item_name, item_data in simulator.database.items.iterate():
         #    if int(item_data["unlock"]) <= simulator.level:
         #        #print(item_name)
         #        pass
 
-        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean", "Sugarcane", "Carrot"], simulator, time)
+        # Plant basic crops
+        self.fill_crops(simulator, time)
+        #self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean", "Sugarcane", "Carrot", "Pumpkin", "Potato"], simulator, time)
 
         # Create crafted items in available mills
 
@@ -135,8 +210,10 @@ class Simulator:
             recipes = []
             for recipe in self.list_of_unlocked_buildings["CraftedProducts"][pb]:
                 for key in recipe:
-                    recipes.append(key)
-            #print("Rolling plant", pb, recipes)
+                    # Append to list only if it has been unlocked!
+                    recipe_data, recipe_name = self.database.processing_buildings.search(key)
+                    if "UnlockLevel" not in recipe_data["data"] or int(recipe_data["data"]["UnlockLevel"]) <= self.level:
+                        recipes.append(key)
             self.rolling_plant(pb, recipes, simulator, time)
 
         #self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
@@ -154,6 +231,23 @@ class Simulator:
         for free in frees:
             #print(free.show())
             self.feed_animal("Pig", time)
+
+        frees = self.manager.get_frees("Sheep")
+        for free in frees:
+            #print(free.show())
+            self.feed_animal("Sheep", time)
+
+        frees = self.manager.get_frees("Goat")
+        for free in frees:
+            #print(free.show())
+            self.feed_animal("Goat", time)
+
+        # Revive trees
+        for tree in self.database.fruit_trees.items:
+            for tree_element in self.manager.get_frees(tree):
+                self.manager.initiate_tree(tree_element, tree_element.animal_data, time)
+
+
 
     def get_all_products(self, level):
         recipes = 0
@@ -244,7 +338,7 @@ if __name__ == "__main__":
     for counter in range(1, 32):
         simulator.manager.add("Vegetables")
 
-    for counter in range(1, 10):
+    for counter in range(1, 15):
         simulator.manager.add("Cow", animal=True)
     for counter in range(1, 15):
         simulator.manager.add("Chicken", animal=True)

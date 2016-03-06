@@ -26,6 +26,14 @@ class ItemsProcessorManager:
                 return item
         return None
 
+    def get_total(self, id):
+        # Returns a list of all free slots of a given type
+        frees = []
+        for item in self.items:
+            if item.id == id:
+                frees.append(item)
+        return frees
+
     def get_frees(self, id):
         # Returns a list of all free slots of a given type
         frees = []
@@ -34,15 +42,36 @@ class ItemsProcessorManager:
                 frees.append(item)
         return frees
 
-    def add(self, id, data=None, animal=False):
+    def add(self, id, data=None, animal=False, tree=False, simulator=None, ts=None):
 
-        if animal: # id == "Cow" or id == "Chicken" or id == "Pig":
+        if animal:
             data, name = self.database.items.search(id, self.database.generators)
-            #print(data)
+
+        if tree:
+            data, name = self.database.items.search(id, self.database.generators)
+            print(data)
 
         _item = ItemsProcessor(self, id, data)
         self.items.append(_item)
+
+        # Trees autogrow fruit!
+        if tree:
+            self.initiate_tree(_item, data, ts)
+
         return _item
+
+    def initiate_tree(self, _item, data, ts):
+        fruit_name = "Invalid!"
+        if "Tree" in data["data"]["Name"]:
+            fruit_name = data["data"]["Name"].split("Tree")[0]
+        if "Bush" in data["data"]["Name"]:
+            fruit_name = data["data"]["Name"].split("Bush")[0]
+            if fruit_name == "Blueberry":
+                fruit_name = "Blackberry"
+        if "BeeHive" in data["data"]["Name"]:
+            fruit_name = "Honeycomb"
+        _item.bear_fruit(fruit_name, ts)
+
 
     def find(self, name):
         for item in self.items:
@@ -50,8 +79,9 @@ class ItemsProcessorManager:
                 return item
         return None
 
-    def update(self, time):
-        print("Update ts: " + self.nice_number(time))
+    def update(self, time, verbose):
+        if verbose:
+            print("Update ts: " + self.nice_number(time))
         for item in self.items:
             item.update(time)
 
@@ -61,8 +91,9 @@ class ItemsProcessorManager:
             item.show(timestamp)
         print("=====================================")
 
-    def harvest(self, simulator):
-        print("========== Harvesting =============")
+    def harvest(self, simulator, verbose=True):
+        if verbose:
+            print("========== Harvesting =============")
         result = []
         experience = 0
         for item in self.items:
@@ -76,8 +107,9 @@ class ItemsProcessorManager:
                     simulator.storage.add(harvested)
                 if "ExpCollect" in crop_data["data"] or True:
                     experience += int(crop_data["data"]["ExpCollect"])
-        print("Harvested: " + str(result))
-        print("===================================")
+        if verbose:
+            print("Harvested: " + str(result))
+            print("===================================")
         return experience
 
 
@@ -108,6 +140,7 @@ class ItemsProcessor:
     def plant(self, crop_name_ref, simulator, timestamp):
 
         crop_data, crop_name = self.parent.database.items.search(crop_name_ref, self.parent.database.generators)
+        #print(crop_name, crop_data)
 
         requirements = []
 
@@ -140,6 +173,7 @@ class ItemsProcessor:
                         break
         if len(requirements_copy) != 0:
             # Could not find all requirements
+            #print("Could not find all requirements for", crop_name_ref, requirements, requirements_copy)
             do_it = False
 
         if do_it:
@@ -155,6 +189,12 @@ class ItemsProcessor:
             return True
 
         return False
+
+    def bear_fruit(self, fruit, timestamp):
+        self.status = "Bearing"
+        self.name = fruit
+        self.ts = timestamp
+        self.data = self.animal_data["data"]
 
     def food_needed(self):
         #print(self.animal_data["data"])
