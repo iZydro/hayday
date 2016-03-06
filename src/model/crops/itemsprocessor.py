@@ -105,7 +105,7 @@ class ItemsProcessor:
 
         pass
 
-    def plant(self, crop_name_ref, timestamp):
+    def plant(self, crop_name_ref, simulator, timestamp):
 
         crop_data, crop_name = self.parent.database.items.search(crop_name_ref, self.parent.database.generators)
 

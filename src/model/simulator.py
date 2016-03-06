@@ -13,14 +13,13 @@ class Simulator:
 
     crops_cnt = None
 
-
     list_of_unlocked_buildings = None
-
 
     def __init__(self):
         self.database = Database()
         self.database.init_data()
         self.experience = 0
+        self.crops_cnt = {}
 
     def harvest(self, item):
         harvested = item.harvest()
@@ -48,7 +47,7 @@ class Simulator:
 
         good = animal.good_created()
         #print("Good name: " + good)
-        animal.plant(good, time)
+        animal.plant(good, self, time)
 
     def create_product(self, product_ref, timestamp):
         product, product_name = database.items.search(product_ref, database.generators)
@@ -85,41 +84,41 @@ class Simulator:
         # First, add all new items to the manager
 
         self.level = int(self.database.get_level(self.experience))
-        simulator.list_of_unlocked_buildings, total_recipes = simulator.get_all_products(self.level)
+        self.list_of_unlocked_buildings, total_recipes = self.get_all_products(self.level)
 
         # Add new buildings if they do not exist
-        for pb in simulator.list_of_unlocked_buildings["CraftedProducts"]:
-            if simulator.manager.find(pb):
+        for pb in self.list_of_unlocked_buildings["CraftedProducts"]:
+            if self.manager.find(pb):
                 # Ya existe
                 pass
             else:
                 #print("Adding: " + pb)
-                simulator.manager.add(pb)
+                self.manager.add(pb)
 
         self.manager.update(time)
-        exp = self.manager.harvest(simulator)
+        exp = self.manager.harvest(self)
         self.experience += exp
-        self.plant_feed_animal(simulator, time)
-        exp = self.manager.harvest(simulator)
+        self.plant_feed_animal(self, time)
+        exp = self.manager.harvest(self)
         self.experience += exp
         #self.manager.show(time)
         self.storage.list()
         print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
 
-    def rolling_plant(self, slot, crops, simulator):
+    def rolling_plant(self, slot, crops, simulator, time):
 
         # Create sequence pointer for this slot if it does not exist
-        if slot not in simulator.crops_cnt:
-            simulator.crops_cnt[slot] = 0
+        if slot not in self.crops_cnt:
+            self.crops_cnt[slot] = 0
 
-        frees = simulator.manager.get_frees(slot)
+        frees = self.manager.get_frees(slot)
         for free in frees:
             #print("Try plant", str(crops[simulator.crops_cnt[slot]]))
-            if free.plant(crops[simulator.crops_cnt[slot]], time):
+            if free.plant(crops[self.crops_cnt[slot]], simulator, time):
                 #print("Planted", str(crops[simulator.crops_cnt[slot]]))
-                simulator.crops_cnt[slot] += 1
-                if simulator.crops_cnt[slot] >= len(crops):
-                    simulator.crops_cnt[slot] = 0
+                self.crops_cnt[slot] += 1
+                if self.crops_cnt[slot] >= len(crops):
+                    self.crops_cnt[slot] = 0
 
     def plant_feed_animal(self, simulator, time):
 
@@ -128,38 +127,38 @@ class Simulator:
         #        #print(item_name)
         #        pass
 
-        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean", "Sugarcane", "Carrot"], simulator)
+        self.rolling_plant("Vegetables", ["Wheat", "Corn", "Soybean", "Sugarcane", "Carrot"], simulator, time)
 
         # Create crafted items in available mills
 
-        for pb in simulator.list_of_unlocked_buildings["CraftedProducts"]:
+        for pb in self.list_of_unlocked_buildings["CraftedProducts"]:
             recipes = []
-            for recipe in simulator.list_of_unlocked_buildings["CraftedProducts"][pb]:
+            for recipe in self.list_of_unlocked_buildings["CraftedProducts"][pb]:
                 for key in recipe:
                     recipes.append(key)
             #print("Rolling plant", pb, recipes)
-            self.rolling_plant(pb, recipes, simulator)
+            self.rolling_plant(pb, recipes, simulator, time)
 
         #self.rolling_plant("Hammermill", ["Chicken Food", "Cow Food"], simulator)
         #self.rolling_plant("Bakery", ["Bread", "Corn Bread"], simulator)
 
-        frees = simulator.manager.get_frees("Cow")
+        frees = self.manager.get_frees("Cow")
         for free in frees:
-            simulator.feed_animal("Cow", time)
+            self.feed_animal("Cow", time)
 
-        frees = simulator.manager.get_frees("Chicken")
+        frees = self.manager.get_frees("Chicken")
         for free in frees:
-            simulator.feed_animal("Chicken", time)
+            self.feed_animal("Chicken", time)
 
-        frees = simulator.manager.get_frees("Pig")
+        frees = self.manager.get_frees("Pig")
         for free in frees:
             #print(free.show())
-            simulator.feed_animal("Pig", time)
+            self.feed_animal("Pig", time)
 
     def get_all_products(self, level):
         recipes = 0
         mills = {}
-        for item_name, item_data in simulator.database.items.iterate():
+        for item_name, item_data in self.database.items.iterate():
             if int(item_data["unlock"]) <= level:
 
                 mill = item_data["Mill"]
@@ -189,7 +188,7 @@ if __name__ == "__main__":
 
     simulator.storage = Storage(database)
     simulator.manager = ItemsProcessorManager(database, simulator.storage)
-    simulator.crops_cnt = {}
+    #simulator.crops_cnt = {}
 
     #database.fruits.show()
     #database.fruit_trees.show()
