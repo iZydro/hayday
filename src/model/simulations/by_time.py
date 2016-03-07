@@ -75,25 +75,10 @@ if __name__ == '__main__':
     simulator.manager.add("BlueberryBush", tree=True, simulator=simulator, ts=time)
     simulator.manager.add("BeeHive", tree=True, simulator=simulator, ts=time)
 
-    time += 1000 * 1000 * 60
-
-    simulator.manager.update(time, verbose=True)
-    simulator.manager.show(time)
-
-    simulator.update_harvest_show_list(time, verbose=False)
-
-    #tree = simulator.manager.find("AppleTree")
-    #tree.plant("Apple", simulator, 0)
-
-    #print("Tree:", tree)
-    #print("Tree:", tree.name)
-    #print("Tree:", tree.data)
-    #simulator.manager.plant("AppleTree", simulator, 0)
-
     session_minutes = 10
     session_hours = [8, 12, 14, 18, 21]
 
-    for day in range(1, 20):
+    for day in range(1, 200):
         # For each day
         for session in session_hours:
             time_session = time + session * 60*60*1000

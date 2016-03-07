@@ -285,6 +285,10 @@ if __name__ == "__main__":
     simulator.manager = ItemsProcessorManager(database, simulator.storage)
     #simulator.crops_cnt = {}
 
+    database.fishes.show()
+
+    exit(1)
+
     #database.fruits.show()
     #database.fruit_trees.show()
     #exit(1)
