@@ -132,7 +132,8 @@ class Simulator:
             crops_to_plant = crops_per_field - planted_crops[crop_name]
             for crop in range(0, crops_to_plant):
                 free = self.manager.get_free("Vegetables")
-                free.plant(crop_name, simulator, time)
+                if free:
+                    free.plant(crop_name, simulator, time)
 
 
     def rolling_plant(self, slot, crops, simulator, time):
