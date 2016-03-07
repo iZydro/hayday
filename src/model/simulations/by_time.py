@@ -83,10 +83,11 @@ if __name__ == '__main__':
         for session in session_hours:
             time_session = time + session * 60*60*1000
             simulator.update_harvest_show_list(time_session, verbose=True)
+            #simulator.manager.show(time_session)
             for minute in range(1, session_minutes):
                 time_minute = time_session + minute * 60*1000
                 simulator.update_harvest_show_list(time_minute, verbose=False)
-            #simulator.manager.show(time_minute)
+                #simulator.manager.show(time_minute)
             print("Simulated day: " + str(day) + ", session: " + str(session))
         time += 1000*60*60*24
 

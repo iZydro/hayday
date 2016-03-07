@@ -162,6 +162,19 @@ class ItemsProcessor:
         #print(crop_data, crop_name, requirements)
         #print(requirements)
 
+        requirements_copy = {}
+        for req in requirements:
+            if req not in requirements_copy:
+                requirements_copy[req] = 0
+            requirements_copy[req] += 1
+
+        # Check if all requirements exist in storage
+        requirements_met = True
+        for req in requirements_copy:
+            if not self.parent.storage.find(req, requirements_copy[req]):
+                requirements_met = False
+
+        '''
         # Create a copy of the requirements to check if all are in the storage
         requirements_copy = requirements.copy()
 
@@ -171,7 +184,8 @@ class ItemsProcessor:
                     if item == req:
                         requirements_copy.remove(req)
                         break
-        if len(requirements_copy) != 0:
+'''
+        if not requirements_met:
             # Could not find all requirements
             #print("Could not find all requirements for", crop_name_ref, requirements, requirements_copy)
             do_it = False
