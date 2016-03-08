@@ -3,6 +3,8 @@ from model.simulator import Simulator
 from model.crops.storage import Storage
 from model.crops.itemsprocessor import ItemsProcessorManager
 
+import math
+
 import pandas as pd
 import matplotlib.pylab as plt
 
@@ -67,18 +69,25 @@ if __name__ == '__main__':
     simulator.database.fishes.show()
 
     simulator.manager.add("AppleTree", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("AppleTree", tree=True, simulator=simulator, ts=time)
     simulator.manager.add("CherryTree", tree=True, simulator=simulator, ts=time)
     simulator.manager.add("CacaoTree", tree=True, simulator=simulator, ts=time)
+    simulator.manager.add("OliveTree", tree=True, simulator=simulator, ts=time)
+    simulator.manager.add("LemonTree", tree=True, simulator=simulator, ts=time)
+
     simulator.manager.add("CoffeeBush", tree=True, simulator=simulator, ts=time)
     simulator.manager.add("RaspberryBush", tree=True, simulator=simulator, ts=time)
     simulator.manager.add("BlueberryBush", tree=True, simulator=simulator, ts=time)
+
     simulator.manager.add("BeeHive", tree=True, simulator=simulator, ts=time)
 
     session_minutes = 10
     session_hours = [8, 12, 14, 18, 21]
+    session_days = 365*2
 
-    for day in range(1, 200):
+    ticks_density = session_days / 30
+    ticks_density = int(ticks_density / 5) * 5
+
+    for day in range(1, session_days+1):
         # For each day
         for session in session_hours:
             time_session = time + session * 60*60*1000
@@ -97,8 +106,40 @@ if __name__ == '__main__':
         #simulator.database.processing_buildings.show()
         #simulator.manager.show(time)
 
+    #simulator.storage.list_acc()
+
+    for item in simulator.database.items.items:
+        acc = simulator.storage.how_many_acc(item)
+        item_data, item = simulator.database.items.search(item, simulator.database.generators)
+        unlock = 0
+        if "UnlockLevel" in item_data["data"]:
+            unlock = int(item_data["data"]["UnlockLevel"])
+        prefix = ""
+        if acc == 0:
+            prefix = "**********"
+
+        if unlock <= simulator.level:
+            print(prefix, item, "unlock:", unlock, "acc:", acc)
+
     my_data = pd.Series(data["level"], index=data["time"])
-    myplot = my_data.plot(figsize=(20, 16), kind="line", grid=True, title="level")
+    myplot = my_data.plot(figsize=(64, 32), kind="line", grid=True, title="level")
+
+    xticks = [n for n in range(1, session_days+1)]
+    xticklabels = []
+    for n in range(0, len(xticks)):
+        tick = xticks[n]
+        if (tick-1) % ticks_density == 0:
+            xticklabels.append(xticks[n])
+        else:
+            xticklabels.append("")
+
+    myplot.xaxis.set_ticks(xticks)
+    myplot.xaxis.set_ticklabels(xticklabels, rotation=0)
+
+    yticks = [n for n in range(1, simulator.level+1)]
+    yticklabels = [ n for n in xticks ]
+    myplot.yaxis.set_ticks(yticks)
+    myplot.yaxis.set_ticklabels(yticklabels, rotation=0)
 
     point = __file__.rfind(".")
     bar = __file__.rfind("/")
