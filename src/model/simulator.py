@@ -299,9 +299,14 @@ if __name__ == "__main__":
     #simulator.crops_cnt = {}
 
     data = ["Level", "MaxFields", "MaxChickenHabitats", "MaxCowHabitats", "MaxSheepHabitats", "MaxPigHabitats", "MaxGoatHabitats"]
+    data1 = ["Crops", "Mills", "Recipes"]
+    nums1 = {}
     h = ""
     sep = ""
     for d in data:
+        h += sep + d
+        sep = ","
+    for d in data1:
         h += sep + d
         sep = ","
     print(h)
@@ -316,7 +321,29 @@ if __name__ == "__main__":
             else:
                 h += sep + "0"
             sep = ","
+
+        num = 0
+        for d in database.fields.items:
+            if int(database.fields.items[d]["data"]["UnlockLevel"]) <= level:
+                num += 1
+        nums1["Crops"] = str(num)
+
+        mills, total_recipes = simulator.get_all_products(level)
+
+        nums1["Recipes"] = str(total_recipes)
+
+        nums1["Mills"] = str(len(mills["CraftedProducts"]))
+
+        for d in data1:
+            if d in nums1:
+                h += sep + nums1[d]
+            else:
+                h += sep + "0"
+            sep = ","
+
         print(h)
+
+
 
 #    database.fields.show()
 #    for level in database.levels:
