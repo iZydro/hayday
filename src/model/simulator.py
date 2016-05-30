@@ -285,7 +285,29 @@ if __name__ == "__main__":
     simulator.manager = ItemsProcessorManager(database, simulator.storage)
     #simulator.crops_cnt = {}
 
-    database.fishes.show()
+    data = ["Level", "MaxFields", "MaxChickenHabitats", "MaxCowHabitats", "MaxSheepHabitats", "MaxPigHabitats", "MaxGoatHabitats"]
+    h = ""
+    sep = ""
+    for d in data:
+        h += sep + d
+        sep = ","
+    print(h)
+
+    for level in range(1, 100):
+        l = str(level)
+        h = ""
+        sep = ""
+        for d in data:
+            if d in database.levels[l]:
+                h += sep + database.levels[l][d]
+            else:
+                h += sep + "0"
+            sep = ","
+        print(h)
+
+#    database.fields.show()
+#    for level in database.levels:
+#        print(level, database.levels[level])
 
     exit(1)
 
