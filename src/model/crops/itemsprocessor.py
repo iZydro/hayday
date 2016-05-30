@@ -103,10 +103,15 @@ class ItemsProcessorManager:
                 simulator.storage.add(harvested)
 
                 crop_data, crop_name = self.database.items.search(harvested, self.database.generators)
+
+                # Crops are collected twice
                 if crop_data["Mill"] == "Vegetables":
                     simulator.storage.add(harvested)
+
+                # Accumulate experience
                 if "ExpCollect" in crop_data["data"] or True:
                     experience += int(crop_data["data"]["ExpCollect"])
+
         if verbose:
             print("Harvested: " + str(result))
             print("===================================")

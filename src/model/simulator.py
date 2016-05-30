@@ -102,8 +102,6 @@ class Simulator:
         # Try to plant and feed eveything!
         self.plant_feed_animal(self, time)
 
-        #exp = self.manager.harvest(self, verbose)
-        self.experience += exp
         if verbose:
             self.storage.list()
             print("Level: " + str(self.level) + " - Experience: " + str(self.experience))
@@ -122,18 +120,23 @@ class Simulator:
         total_fields = self.manager.get_total("Vegetables")
         crops_per_field = int(len(total_fields) / len(unlocked_crops))
 
-        # Check how many crops of each class are planted
         for field in total_fields:
             if field.name in unlocked_crops:
                 planted_crops[field.name] += 1
 
         # Plant the fields until reaching the desired number of each crop
         for crop_name in unlocked_crops:
-            crops_to_plant = crops_per_field - planted_crops[crop_name]
-            for crop in range(0, crops_to_plant):
-                free = self.manager.get_free("Vegetables")
-                if free:
-                    free.plant(crop_name, simulator, time)
+            crops_in_storage = self.storage.how_many(crop_name)
+
+            # Only plant is there are few stored
+            if crops_in_storage < 10:
+
+                # Check how many crops of each class are planted
+                crops_to_plant = crops_per_field - planted_crops[crop_name]
+                for crop in range(0, crops_to_plant):
+                    free = self.manager.get_free("Vegetables")
+                    if free:
+                        free.plant(crop_name, simulator, time)
 
 
     def rolling_plant(self, slot, crops, simulator, time):
@@ -169,6 +172,13 @@ class Simulator:
                 #print("Could not plant:", crops[self.crops_cnt[slot]])
                 pass
 
+    def add_if_less_than_minimum(self, items_to_add):
+        # Add an item from the listo to the storage if there are less than 10 items in the storage
+        # That would simulate ores, fishes, etc
+        for item_to_add in items_to_add:
+            if self.storage.how_many(item_to_add) < 10:
+                self.storage.add(item_to_add)
+
     def plant_feed_animal(self, simulator, time):
 
         # Check if we run out of crops and add one for free if needed
@@ -178,14 +188,17 @@ class Simulator:
                 found = True
             veggies = self.manager.get_total("Vegetables")
             for veggie in veggies:
-                if veggie.name == "crop":
+                if veggie.name == crop:
                     found = True
                     break
 
             if not found:
                 self.storage.add(crop)
 
-        # Add fish for free...
+        # Add fishes and ores for free...
+        self.add_if_less_than_minimum(["Fish Meat", "Lobster Meat", "Duck Down", "SilverOre", "GoldOre", "PlatinumOre", "CoalOre", "IronOre"])
+
+        '''
         self.storage.add("Fish Meat")
         self.storage.add("Lobster Meat")
         self.storage.add("Duck Down")
@@ -195,7 +208,7 @@ class Simulator:
         self.storage.add("PlatinumOre")
         self.storage.add("CoalOre")
         self.storage.add("IronOre")
-
+'''
         #for item_name, item_data in simulator.database.items.iterate():
         #    if int(item_data["unlock"]) <= simulator.level:
         #        #print(item_name)
