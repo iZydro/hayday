@@ -1,6 +1,6 @@
 class globalNames:
-    folder = "/Users/isidro/code/king/hayday/com.supercell.hayday-v1.26.113-1450-Android-4.0.3/assets/data/"
-    #folder = "/Users/isidro.gilabert/workspace/hayday/src/data/"
+    #folder = "/Users/isidro/code/king/hayday/com.supercell.hayday-v1.26.113-1450-Android-4.0.3/assets/data/"
+    folder = "/Users/isidro.gilabert/workspace/hayday/src/data/"
     #folder = "../data/"
 
 
@@ -10,7 +10,9 @@ class globalNames:
     fruits = "Fruits"
     animals = "Animals"
     animal_products = "AnimalProducts"
+    animal_habitats = "AnimalHabitats"
     vegetables = "Vegetables"
+
 
     all_type_products = {
         crafted_products,
@@ -18,6 +20,15 @@ class globalNames:
         trees,
         fruits,
         animals,
+        animal_products,
+        # animal_habitats,
+        vegetables
+    }
+
+    listable_products = {
+        crafted_products,
+        fishing,
+        trees,
         animal_products,
         vegetables
     }

@@ -7,7 +7,7 @@ import json
 class Base:
 
     valid_items = ["Name", "UnlockLevel", "TimeMin", "TimeSec", "FruitCount", "IsFruit", "Price", "ProcessingBuilding",
-                   "Good", "Feed", "ExpCollect"]
+                   "Good", "Feed", "ExpCollect", "Capacity"]
     level_items = ["Level", "ExpToNextLevel", "MaxFields",
                    "MaxChickenHabitats", "MaxCowHabitats", "MaxSheepHabitats", "MaxPigHabitats", "MaxGoatHabitats"]
 

@@ -14,6 +14,8 @@ class Item:
         if unlock == None:
             if "UnlockLevel" in data:
                 unlock = data["UnlockLevel"]
+            else:
+                unlock = 0
 
         self.items[name] = {"Mill": pb, "data": data, "unlock": unlock}
 

@@ -9,6 +9,7 @@ class Database:
     fishes = None
     animals = None
     animal_products = None
+    animal_habitats = None
     fruit_trees = None
     gatherer_habitats = None
     fruits = None
@@ -23,14 +24,15 @@ class Database:
 
     generators = None
 
-    def auto_fill(self, filename, string_id, array_to_add):
+    def auto_fill(self, filename, string_id, array_to_add, add_to_index=True):
 
         csv_data = Base()
         csv_data.read(filename)
         for element in csv_data.items:
             if element != "EmptyField":
                 array_to_add.add(element, string_id, csv_data.items[element])
-                self.items.add(element, string_id, csv_data.items[element])
+                if add_to_index:
+                    self.items.add(element, string_id, csv_data.items[element])
                 #print(element, string_id, csv_data.items[element])
 
     def init_data(self):
@@ -54,6 +56,9 @@ class Database:
         self.auto_fill("fruits", globalNames.fruits, self.fruits)
         self.auto_fill("gatherer_nest_goods", globalNames.fruits, self.fruits)
         #self.auto_fill("honey_extractor_goods", globalNames.fruits, self.fruits)
+
+        self.animal_habitats = BaseItem()
+        self.auto_fill("animal_habitats", globalNames.animal_habitats, self.animal_habitats, add_to_index=False)
 
         csv_data = Base()
         csv_data.read("animal_goods")

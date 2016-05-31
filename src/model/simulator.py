@@ -283,7 +283,7 @@ class Simulator:
                     time = item_data["data"]["TimeMin"]
                 mills[mill][pb].append({item_name: time}) # += 1
 
-                #simulator.database.items.show_one(item_name, item_data)
+                #self.database.items.show_one(item_name, item_data)
                 recipes += 1
 
         return mills, recipes
@@ -296,58 +296,10 @@ if __name__ == "__main__":
 
     simulator.storage = Storage(database)
     simulator.manager = ItemsProcessorManager(database, simulator.storage)
-    #simulator.crops_cnt = {}
 
-    data = ["Level", "MaxFields", "MaxChickenHabitats", "MaxCowHabitats", "MaxSheepHabitats", "MaxPigHabitats", "MaxGoatHabitats"]
-    data1 = ["Crops", "Mills", "Recipes"]
-    nums1 = {}
-    h = ""
-    sep = ""
-    for d in data:
-        h += sep + d
-        sep = ","
-    for d in data1:
-        h += sep + d
-        sep = ","
-    print(h)
-
-    for level in range(1, 100):
-        l = str(level)
-        h = ""
-        sep = ""
-        for d in data:
-            if d in database.levels[l]:
-                h += sep + database.levels[l][d]
-            else:
-                h += sep + "0"
-            sep = ","
-
-        num = 0
-        for d in database.fields.items:
-            if int(database.fields.items[d]["data"]["UnlockLevel"]) <= level:
-                num += 1
-        nums1["Crops"] = str(num)
-
-        mills, total_recipes = simulator.get_all_products(level)
-
-        nums1["Recipes"] = str(total_recipes)
-
-        nums1["Mills"] = str(len(mills["CraftedProducts"]))
-
-        for d in data1:
-            if d in nums1:
-                h += sep + nums1[d]
-            else:
-                h += sep + "0"
-            sep = ","
-
-        print(h)
-
-
-
-#    database.fields.show()
-#    for level in database.levels:
-#        print(level, database.levels[level])
+    database.fields.show()
+    for level in database.levels:
+        print(level, database.levels[level])
 
     exit(1)
 

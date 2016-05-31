@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     #simulator.manager.add("Bakery")
 
-    for counter in range(1, 14*4):
+    for counter in range(1, 100):
         simulator.manager.add("Vegetables")
 
     for counter in range(1, 15):
@@ -68,40 +68,56 @@ if __name__ == '__main__':
     print("Fishes")
     simulator.database.fishes.show()
 
-    simulator.manager.add("AppleTree", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("CherryTree", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("CacaoTree", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("OliveTree", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("LemonTree", tree=True, simulator=simulator, ts=time)
+    for tree in range(1, 3):
+        simulator.manager.add("AppleTree", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("CherryTree", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("CacaoTree", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("OliveTree", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("LemonTree", tree=True, simulator=simulator, ts=time)
 
-    simulator.manager.add("CoffeeBush", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("RaspberryBush", tree=True, simulator=simulator, ts=time)
-    simulator.manager.add("BlueberryBush", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("CoffeeBush", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("RaspberryBush", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("BlueberryBush", tree=True, simulator=simulator, ts=time)
 
-    simulator.manager.add("BeeHive", tree=True, simulator=simulator, ts=time)
+        simulator.manager.add("BeeHive", tree=True, simulator=simulator, ts=time)
 
     session_minutes = 10
     session_hours = [8, 12, 14, 18, 21]
-    session_days = 365*2
+    session_days = 600
 
     ticks_density = session_days / 30
     ticks_density = int(ticks_density / 5) * 5
+
+    last_level = 0
+    sessions_counter = 0
+    days_counter = 1
 
     for day in range(1, session_days+1):
         # For each day
         for session in session_hours:
             time_session = time + session * 60*60*1000
-            simulator.update_harvest_show_list(time_session, verbose=True)
+            #simulator.update_harvest_show_list(time_session, verbose=False)
             #simulator.manager.show(time_session)
             for minute in range(1, session_minutes):
                 time_minute = time_session + minute * 60*1000
                 simulator.update_harvest_show_list(time_minute, verbose=False)
                 #simulator.manager.show(time_minute)
-            print("Simulated day: " + str(day) + ", session: " + str(session))
+            sessions_counter += 1
+        #print("Simulated day: " + str(day) + ", session: " + str(session))
+
+            # Check level up session
+            if simulator.level != last_level:
+                for levelling in range(last_level+1, simulator.level+1):
+                    #print(levelling)
+                    print(levelling, ",", days_counter, ",", sessions_counter)
+                last_level = simulator.level
+
         time += 1000*60*60*24
 
         data["time"].append(day)
         data["level"].append(simulator.level)
+
+        days_counter += 1
 
         #simulator.database.processing_buildings.show()
         #simulator.manager.show(time)
